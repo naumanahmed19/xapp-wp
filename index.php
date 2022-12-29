@@ -1,2 +1,0 @@
-<?php
-/**Silance is gold */
