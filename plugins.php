@@ -9,6 +9,13 @@ define('XAPP_BLOCKS' , [
 
 	'xapp/screens',
 
+
+    'xapp/icon-text-button',
+    'xapp/text-button',
+    'xapp/icon-button',
+    'xapp/rounded-button',
+    'xapp/full-width',
+
  ]);
 
 /**
@@ -17,8 +24,7 @@ define('XAPP_BLOCKS' , [
 require_once XAPP_IMPORT_PATH . 'admin/xapp-register-post-type.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-block-parser.php';
-
-
+require_once XAPP_IMPORT_PATH . 'admin/theme-json.php';
 
 global $pagenow;
 global $post;
@@ -32,7 +38,7 @@ if ($_GET['page'] =='xapp-apps-page' || $_GET['post_type'] ==XAPP_POST_TYPE) {
 
     require_once XAPP_IMPORT_PATH . 'build/non-block-examples/dahsboard/index.php';
 
-    
+
 
     
 
@@ -56,6 +62,13 @@ function is_edit_page($new_edit = null){
 
 if ($_GET['page'] =='xapp-apps-page' || (is_edit_page() ) ) {
 	wp_enqueue_style('tailwind', XAPP_IMPORT_URL.  'build/index.css');
+
+    //Block variations
+    wp_enqueue_script( 
+		'xapp-enqueue-block-variations', 
+		XAPP_IMPORT_URL . 'admin/variations.js', 
+		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) 
+	);
 } 
 
 /**
@@ -75,7 +88,8 @@ if (isXappEditor()) {
     //blocks
     require_once XAPP_IMPORT_PATH . 'build/blocks/screens/index.php';
     require_once XAPP_IMPORT_PATH . 'build/blocks/screen/index.php';
-
+    // require_once XAPP_IMPORT_PATH . 'build/blocks/buttons/index.php';
+    // require_once XAPP_IMPORT_PATH . 'build/blocks/button/index.php';
 
     
 
@@ -93,6 +107,17 @@ if (isXappEditor()) {
 		 */
 		function xapp_allowed_block_types_when_post_provided( $allowed_block_types, $editor_context ) {
 			global $blocks;
+
+
+                 //get xapp blocks
+            // $blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
+            // $xappBlocks = array();
+            // foreach($blocks as $key) {
+            //     if(strpos($key->name, 'xapp/') === 0){
+            //         $keys[] = $key->name;
+            //     }
+             
+            // }
 		
 			if ( ! empty( $editor_context->post )  && XAPP_POST_TYPE == get_post_type()) {
 

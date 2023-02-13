@@ -19,6 +19,8 @@ class Patterns {
 		$this->init();
 	}
 
+
+
 	/**
 	 * Initialize.
 	 */
@@ -36,36 +38,18 @@ class Patterns {
 	public function register_block_patterns() {
 		if ( function_exists( 'register_block_pattern' ) ) {
 
-			// Get the two column pattern content.
-			$two_columns_content = aquila_features_get_template( 'patterns/two-columns' );
+			// // Get the two column pattern content.
+			// $two_columns_content = aquila_features_get_template( 'patterns/two-columns' );
+			
+			require_once XAPP_IMPORT_PATH . 'admin/patterns/button.php';
 
-			/**
-			 * Register Two Column Pattern
-			 */
-			register_block_pattern(
-				'aquila-features/two-columns',
-				[
-					'title'       => __( 'Aquila Features Two Column', 'aquila-features' ),
-					'description' => __( 'Aquila Two Column Patterns', 'aquila-features' ),
-					'categories'  => [ 'aquila-columns' ],
-					'content'     => $two_columns_content,
-				]
-			);
+			require_once XAPP_IMPORT_PATH . 'admin/patterns/tiles.php';
 
-			/**
-			 * Two Columns Secondary Pattern
-			 */
-			$two_columns_secondary_content = aquila_features_get_template( 'patterns/two-columns-secondary' );
 
-			register_block_pattern(
-				'aquila-features/two-columns-secondary',
-				[
-					'title'       => __( 'Aquila Two Columns Secondary', 'aquila-features' ),
-					'description' => __( 'Aquila Cover Block with image and text', 'aquila-features' ),
-					'categories'  => [ 'aquila-columns' ],
-					'content'     => $two_columns_secondary_content,
-				]
-			);
+
+
+
+
 		}
 	}
 
@@ -75,7 +59,9 @@ class Patterns {
 	public function register_block_pattern_categories() {
 
 		$pattern_categories = [
-			'aquila-columns' => __( 'Aquila Features Columns', 'aquila-features' ),
+			'aquila-columns' => __( 'Aquila Coloumsn', 'aquila-features' ),
+			'xapp-button' => __( 'Buttons', 'xapp' ),
+			'xapp-tiles' => __( 'Tiles', 'xapp' ),
 		];
 
 		if ( ! empty( $pattern_categories ) ) {

@@ -53,6 +53,7 @@
 		'publicly_queryable'    => true,
 		'show_in_rest'          => true,
 		'rest_base'             => 'brand',
+		'template_lock'			=>false,
 		'capability_type' => 'page',
 		'menu_icon' =>  'dashicons-smartphone',
 		// 'capabilities' => array(
@@ -210,64 +211,51 @@ function xapp_meta_fields() {
 
 
 
+	
+
 	 function xapp_register_template() {
 
-		$app = array(
 
-			[ 
-				'brand/screens', [
-					'lock' => [
-						"remove" => true,
-						"move" => true,
-					]
-				], 
-			array(
-				array( 'brand/tab', array(), array(
-					[ 'mdc/tabs', [
-						'tabs'=>[
-							[
-								"tabId"=> "tab0",
-								"index"=> 0,
-								"title"=> "Women",
-							],
-							[
-								"tabId"=> "tab1",
-								"index"=> 1,
-								"title"=> "Men",
-							],
-							[
-								"tabId"=> "tab2",
-								"index"=> 2,
-								"title"=> "Kids",
-							],
-							[
-								"tabId"=> "tab3",
-								"index"=> 3,
-								"title"=> "Sales",
-							],
-						],
+		//  $json = '{"settings":{"screens":[{"screenId":"main","title":"Main","index":0}]}}';
+
+		$json = '{"settings":{"type":"object","default":{"action":"new","screens":[{"screenId":"main","title":"Main","index":0}]}}}';
+		 $t =  json_decode($json, true);
+
+
+		$app = array(array(
+			'xapp/screens', [
+				'lock' => [
+					"remove" => true,
+					"move" => true,
+				],		
+			],
+		), //xapp/screeens
+
+				// array( 'xapp/screens', array(
+				// 			'lock' => [
+				// 		"remove" => true,
+				// 		"move" => true,
+				// 	]
 						
-					], 
-					array(
-						array( 'brand/tab', array() ),
-						array( 'brand/tab', array() ),
-						array( 'brand/tab', array() ),
-						array( 'brand/tab', array() ),
+				// ), array(
+				// 	array( 'xapp/screen', array(
+				// 		'screenId'=> 'main',
+				// 		'title'=>'Main Screen',
+				// 		'index'=> 0,
+
 						
-					) 
-					],
-				) ),
-			) ]
+				// 	), ),
+				
+				// ) ),
+			
 		);
 
 
-		$template = 		array( 'xapp/mockup', array(), array(
-			$app,
-		) );
+		$template = $app;
 		$post_type_object = get_post_type_object( XAPP_POST_TYPE );
 		$post_type_object->template = $template;
 	}
-	//add_action( 'init', 'xapp_register_template',20 );
+		add_action( 'init', 'xapp_register_template',20 );
 
 
 /**

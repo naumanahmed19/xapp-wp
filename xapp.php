@@ -123,3 +123,42 @@ function xapp_mime_types_json( $mimes ) {
 	$mimes['json'] = 'application/json'; 
   return $mimes;
 }
+
+
+
+//Rest add post featured iamge
+
+function xapp_post_rest_payload( $data, $post, $context ) {
+	$featured_image_id = $data->data['featured_media']; // get featured image id
+	$featured_image_url = wp_get_attachment_image_src( $featured_image_id, 'original' ); // get url of the original size
+  
+	if( $featured_image_url ) {
+	  $data->data['featuredImage'] = $featured_image_url[0];
+	}
+  
+	return $data;
+  }
+  add_filter( 'rest_prepare_post', 'xapp_post_rest_payload', 10, 3 );
+
+
+  function my_block_pattern_categories( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug'  => 'xapp-buttons',
+                'title' => __( 'Xapp Buttons', 'my-plugin' ),
+            ),
+        )
+    );
+}
+add_filter( 'block_pattern_categories', 'my_block_pattern_categories', 10, 2 );
+
+register_block_pattern(
+    'my-plugin/text-button',
+    array(
+        'title'      => __( 'Text Button', 'my-plugin' ),
+        'content'    => "<!-- wp:button -->\n<div class='wp-block-button'><a class='wp-block-button__link'>Button Text</a></div>\n<!-- /wp:button -->",
+        'categories' => array( 'xapp-buttons' ),
+    )
+);

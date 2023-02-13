@@ -1,15 +1,14 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "name": "xapp/screens",
+  "name": "xapp/webview",
   "version": "0.1.0",
-  "title": "App Screens",
+  "title": "Web view",
   "category": "design",
   "icon": "layout",
-  "description": "Add app screens.",
+  "description": "Add and link any web view",
   "supports": {
     "html": false,
-    "multiple": false,
-    "anchor": true
+    "multiple": true
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
@@ -20,23 +19,14 @@
     "blockId": {
       "type": "string"
     },
-    "activeScreenIndex": {
-      "type": "number",
-      "default": 0
-    },
     "editMode": {
-      "type": "boolean",
-      "default": false
-    },
-    "guide": {
       "type": "boolean",
       "default": false
     },
     "settings": {
       "type": "object",
       "default": {
-        "action": "new",
-        "screens": []
+        "url": "new"
       }
     },
     "style": {

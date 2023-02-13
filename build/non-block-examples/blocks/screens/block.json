@@ -8,7 +8,8 @@
   "description": "Add app screens.",
   "supports": {
     "html": false,
-    "multiple": true
+    "multiple": false,
+    "anchor": true
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
@@ -19,7 +20,15 @@
     "blockId": {
       "type": "string"
     },
+    "activeScreenIndex": {
+      "type": "number",
+      "default": 0
+    },
     "editMode": {
+      "type": "boolean",
+      "default": false
+    },
+    "guide": {
       "type": "boolean",
       "default": false
     },

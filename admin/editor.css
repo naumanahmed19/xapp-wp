@@ -5,7 +5,7 @@
 	display: none;
 }
 
-.post-type-xapp
+/* .post-type-xapp
 	.editor-styles-wrapper
 	.edit-post-visual-editor__post-title-wrapper
 	> :where(:not(.alignleft):not(.alignright)),
@@ -15,7 +15,7 @@
 	max-width: 530px;
 	margin-left: auto !important;
 	margin-right: auto !important;
-}
+} */
 
 
 
@@ -27,4 +27,47 @@
 html :where(.wp-block) {
 	margin-top: 0;
 	margin-bottom: 0;
+}
+.editor-styles-wrapper .is-layout-flow > * + * {
+    margin-block-start: 0 !important;
+}
+
+.editor-styles-wrapper .wp-block-query h2 {
+    margin: 5px  0;
+}
+
+//Hide default preview button
+button.components-button.block-editor-post-preview__button-toggle.components-dropdown-menu__toggle.is-tertiary {
+    display: none;
+}
+
+
+// Block: Core/image
+// hide image caption has there is no way to disable
+.wp-element-caption, figcaption {
+    display: none !important;
+}
+
+
+//Remvoe extra  spacing
+.block-editor-block-list__layout{
+	margin: 0 !important;
+}
+.editor-styles-wrapper .is-layout-flex{
+	gap: 0 !important;
+	margin: 0 !important;
+}
+
+
+//query/block
+.xapp-query-list-view ul{
+	display: flex !important;
+	overflow: auto !important;
+}
+
+
+
+//cover block inhert radius
+.editor-styles-wrapper .wp-block-cover, .wp-block-cover__background, .wp-block-xapp-container{
+	border-radius: inherit;
 }

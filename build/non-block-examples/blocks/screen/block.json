@@ -5,11 +5,12 @@
   "version": "0.1.0",
   "title": "Screen",
   "category": "design",
-  "icon": "layout",
+  "icon": "mobile",
   "description": "Example static block scaffolded with Create Block tool.",
   "supports": {
     "html": false,
-    "lock": true
+    "lock": true,
+    "anchor": false
   },
   "parent": [
     "xapp/screens"
