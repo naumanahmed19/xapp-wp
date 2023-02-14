@@ -101,7 +101,8 @@ add_action('rest_api_init', function() {
 			$translations = [];
 			$langs = [];
 			$t = get_post_custom_values( 'appLocales', $postId);
-			$locales =  json_decode($t[0],true);
+			if(!empty($t)){
+				$locales =  json_decode($t[0],true);
 		
 			if($locales ){
 				$activeLocale = $request['activeLocale'];
@@ -116,6 +117,7 @@ add_action('rest_api_init', function() {
 				}	
 			}
 	
+			}
 	
 			return [
 				'languages' => $langs,

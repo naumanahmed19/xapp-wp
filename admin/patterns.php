@@ -30,6 +30,9 @@ class Patterns {
 		 */
 		add_action( 'init', [ $this, 'register_block_patterns' ] );
 		add_action( 'init', [ $this, 'register_block_pattern_categories' ] );
+
+
+		
 	}
 
 	/**

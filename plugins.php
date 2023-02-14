@@ -34,7 +34,7 @@ function isXappEditor(){
     || (isset($_GET['post_type']) && $_GET['post_type'] == XAPP_POST_TYPE );
 }
 
-if ($_GET['page'] =='xapp-apps-page' || $_GET['post_type'] ==XAPP_POST_TYPE) {
+if (!empty($_GET['page']) &&  $_GET['page'] =='xapp-apps-page' || (!empty($_GET['post_type']) && $_GET['post_type'] ==XAPP_POST_TYPE)) {
 
     require_once XAPP_IMPORT_PATH . 'build/non-block-examples/dahsboard/index.php';
 
@@ -60,17 +60,19 @@ function is_edit_page($new_edit = null){
         return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
 }
 
-if ($_GET['page'] =='xapp-apps-page' || (is_edit_page() ) ) {
-	wp_enqueue_style('tailwind', XAPP_IMPORT_URL.  'build/index.css');
-
-    //Block variations
-    wp_enqueue_script( 
-		'xapp-enqueue-block-variations', 
-		XAPP_IMPORT_URL . 'admin/variations.js', 
-		array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) 
-	);
-} 
-
+function xapp_enque_scripts(){
+    if (!empty( $_GET['page'])  && $_GET['page'] =='xapp-apps-page' || (is_edit_page() ) ) {
+        wp_enqueue_style('xapp-tailwind', XAPP_IMPORT_URL.  'build/index.css');
+    
+        //Block variations
+        wp_enqueue_script( 
+            'xapp-enqueue-block-variations', 
+            XAPP_IMPORT_URL . 'admin/variations.js', 
+            array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) 
+        );
+    } 
+}
+add_action( 'admin_enqueue_scripts', 'xapp_enque_scripts' );
 /**
  * 
  * Only load if xapp page
