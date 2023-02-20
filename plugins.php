@@ -21,6 +21,8 @@ define('XAPP_BLOCKS' , [
 /**
  * Admin 
  */
+
+require_once XAPP_IMPORT_PATH . 'admin/routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-register-post-type.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-block-parser.php';

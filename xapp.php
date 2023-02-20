@@ -109,7 +109,7 @@ add_action( 'activated_plugin', 'xapp_activation_redirect' );
  */
 
 add_filter( 'jwt_auth_whitelist', function ( $endpoints ) {
-	$xpp = array('/wp-json/xapp/v1/*');
+	$xpp = array('/wp-json/xapp/*');
 	return array_unique( array_merge( $endpoints, $xpp ) );
 } );
  

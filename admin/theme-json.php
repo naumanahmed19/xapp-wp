@@ -185,6 +185,10 @@ function xapp_theme_json_theme( $theme_json ){
 					'color'=> array('text' => false, 'link'=>false),
 				),
 				'xapp/icon' =>array(
+					'typography' => array(
+						'fontSizes'    => [],
+						//'units'    => array('px'),
+					),
 					'color'=> array('background' => false, 'link'=>false),
 				),
 				"core/paragraph"=> array(
