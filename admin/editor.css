@@ -58,11 +58,9 @@ button.components-button.block-editor-post-preview__button-toggle.components-dro
 	margin: 0 !important;
 }
 
-
-//query/block
-.xapp-query-list-view ul{
-	display: flex !important;
-	overflow: auto !important;
+.xapp-query-list-view .wp-block-post-template{
+	display: flex;
+	overflow: auto;
 }
 
 

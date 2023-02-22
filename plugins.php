@@ -6,6 +6,23 @@
 defined( 'ABSPATH' ) || exit;
 
 define('XAPP_BLOCKS' , [
+    //Allow core wordPress blocks
+
+    'core/cover',
+    'core/group',
+    'core/spacer', //TODO: create dart widget
+    'core/query',
+    'core/post-template',
+    'core/post-date',
+    'core/post-title',
+    'core/query-no-results',
+    'core/post-content',
+    'core/post-featured-image',
+    'core/image',
+    'core/paragraph', //TODO: allow html 
+    'core/heading', 
+    'core/columns',
+    'core/column',
 
 	'xapp/screens',
     'xapp/bottom-tabs',
