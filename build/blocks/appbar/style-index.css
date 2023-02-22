@@ -1,0 +1,7 @@
+
+.media-control img{border:none;max-width:100%;height:100%;text-align:center;margin:0 auto}.media-control img:hover{cursor:pointer}.media-control__image{min-height:70px;text-align:center;line-height:70px;position:relative;background:#f7f7f7;margin-bottom:20px}.media-control__image svg{margin:0 auto;margin-top:13px}.media-control__image__edit{position:absolute;top:20px;right:30px}.media-control__image__edit button{padding:0 !important;min-width:26px !important;height:26px !important}
+
+.done-editing{margin-top:20px}
+.rapeater__item{position:relative}.rapeater__item__remove-control{position:absolute;top:80%;right:-12px;padding:0 !important;min-width:26px !important;height:26px !important}
+.box-wrapper{display:flex;flex-wrap:wrap;height:250px;overflow-y:auto;overflow-x:hidden;margin-bottom:15px}.box-wrapper .box{width:35px;height:35px;background:#fff;border:1px solid #eee;flex:1 1 35px;margin:0 auto;text-align:center;justify-content:space-between;padding:5px}.box-wrapper .box svg{width:20px;height:20px}.box-wrapper .box.icon-selected{background:#007cba;color:#fff}.box-wrapper .box.icon-selected svg{fill:#fff}
+.block-loading{min-height:100px;text-align:center;margin:0 auto;vertical-align:middle;line-height:100px}

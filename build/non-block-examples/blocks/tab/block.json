@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/tab",
+  "version": "0.1.0",
+  "title": "Tab",
+  "category": "design",
+  "icon": "layout",
+  "description": "Example static block scaffolded with Create Block tool.",
+  "supports": {
+    "html": false,
+    "lock": true
+  },
+  "parent": [
+    "xapp/tabs"
+  ],
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "backgroundColor": {
+      "type": "string"
+    },
+    "verticalAlignment": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
+    },
+    "allowedBlocks": {
+      "type": "array"
+    },
+    "templateLock": {
+      "type": [
+        "string",
+        "boolean"
+      ],
+      "enum": [
+        "all",
+        "insert",
+        false
+      ]
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    },
+    "tabId": {
+      "type": "string"
+    },
+    "tabScreenIndex": {
+      "type": "number"
+    },
+    "icon": {
+      "type": "object",
+      "default": {}
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

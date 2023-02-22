@@ -8,8 +8,18 @@ defined( 'ABSPATH' ) || exit;
 define('XAPP_BLOCKS' , [
 
 	'xapp/screens',
+    'xapp/bottom-tabs',
+    'xapp/tabs',
 
-
+    'xapp/button',
+    'xapp/inkwell',
+	'xapp/appbar',
+    'xapp/divider',
+    'xapp/container',
+    'xapp/text-block',
+    'xapp/icon',
+    'xapp/intro-slider',
+    
     'xapp/icon-text-button',
     'xapp/text-button',
     'xapp/icon-button',
@@ -90,10 +100,34 @@ if (isXappEditor()) {
     //blocks
     // require_once XAPP_IMPORT_PATH . 'build/blocks/mockup/index.php';
     //blocks
-    require_once XAPP_IMPORT_PATH . 'build/blocks/screens/index.php';
-    require_once XAPP_IMPORT_PATH . 'build/blocks/screen/index.php';
+    // require_once XAPP_IMPORT_PATH . 'build/blocks/screens/index.php';
+    // require_once XAPP_IMPORT_PATH . 'build/blocks/screen/index.php';
     // require_once XAPP_IMPORT_PATH . 'build/blocks/buttons/index.php';
     // require_once XAPP_IMPORT_PATH . 'build/blocks/button/index.php';
+
+
+    	function xapp_blocks_init() {
+			$blocks = [
+				'screen',
+				'screens',
+                'appbar',
+                'bottom-tabs',
+                'tabs',
+                'tab',
+                'button',
+                'inkwell',
+                'container',
+                'divider',
+                'text',
+                'icon',
+                'intro-slider',
+			];
+			
+			foreach($blocks as $block){
+				register_block_type( __DIR__ . "/build/blocks/{$block}" );
+			}
+		}
+		add_action( 'init', 'xapp_blocks_init' );
 
     
 

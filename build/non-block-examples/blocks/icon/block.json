@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/icon",
+  "version": "0.1.0",
+  "title": "Icon",
+  "category": "brand",
+  "icon": "layout",
+  "description": "Add icon",
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "color": {
+      "__experimentalSkipSerialization": true,
+      "__experimentalDefaultControls": {
+        "text": true
+      }
+    },
+    "reusable": false,
+    "__experimentalSelector": ".wp-block-button__link",
+    "__experimentalStyle": {
+      "color": {
+        "text": "#fff",
+        "background": "#32373c"
+      }
+    }
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "size": {
+      "type": "number",
+      "default": 16
+    },
+    "settings": {
+      "type": "object",
+      "default": {
+        "icon": {
+          "code": 60566,
+          "name": "shopping-bag-solid",
+          "uid": "880c707cc5176b65c945badc5b660dba"
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "gradient": {
+      "type": "string"
+    }
+  }
+}

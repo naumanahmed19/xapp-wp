@@ -1,0 +1,127 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/button",
+  "version": "0.1.0",
+  "title": "Button",
+  "category": "brand",
+  "icon": "button",
+  "description": "Add a button block",
+  "supports": {
+    "anchor": true,
+    "align": false,
+    "alignWide": false,
+    "inserter": true,
+    "color": {
+      "__experimentalSkipSerialization": true,
+      "gradients": true,
+      "__experimentalDefaultControls": {
+        "background": true
+      }
+    },
+    "reusable": true,
+    "spacing": {
+      "__experimentalSkipSerialization": true,
+      "padding": true,
+      "blockGap": false,
+      "__experimentalDefaultControls": {
+        "padding": true,
+        "blockGap": false
+      }
+    },
+    "__experimentalBorder": {
+      "radius": true,
+      "border": true,
+      "color": true,
+      "__experimentalSkipSerialization": true,
+      "__experimentalDefaultControls": {
+        "radius": true,
+        "border": true,
+        "color": true
+      }
+    },
+    "__experimentalStyle": {
+      "border": {
+        "//": "100% causes an oval, but any explicit but really high value retains the pill shape.",
+        "radius": "9999px"
+      },
+      "color": {
+        "backgroundColor": "#32373c"
+      },
+      "typography": {
+        "fontSize": "",
+        "textDecoration": "none"
+      },
+      "spacing": {
+        "blockGap": false,
+        "padding": true,
+        "margin": true,
+        "__experimentalDefaultControls": {
+          "padding": true
+        },
+        "default": {
+          "blockGap": "0"
+        }
+      }
+    },
+    "__experimentalLayout": {
+      "allowSwitching": false,
+      "allowInheriting": false,
+      "allowVerticalAlignment": false,
+      "default": {
+        "type": "flex"
+      }
+    }
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "fill",
+      "label": "Fill",
+      "isDefault": true
+    },
+    {
+      "name": "outline",
+      "label": "Outline"
+    },
+    {
+      "name": "text",
+      "label": "Text"
+    }
+  ],
+  "attributes": {
+    "settings": {
+      "type": "object",
+      "default": {
+        "label": "",
+        "action": "",
+        "linkTo": "",
+        "elevation": 0
+      }
+    },
+    "size": {
+      "type": "string",
+      "default": "custom"
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "width": 150,
+          "height": 50
+        },
+        "elevation": 0,
+        "color": {
+          "background": "#000000"
+        }
+      }
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    }
+  }
+}

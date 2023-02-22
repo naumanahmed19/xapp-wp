@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/intro-slider",
+  "version": "0.1.0",
+  "title": "Intro Slider",
+  "category": "design",
+  "icon": "layout",
+  "description": "Brand App tabs and general settings.",
+  "supports": {
+    "html": false,
+    "multiple": false,
+    "alignWide": false,
+    "align": [
+      "center",
+      "full",
+      "left",
+      "right",
+      "wide"
+    ]
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "default": {
+        "showSelectedLabels": false,
+        "showUnselectedLabels": false,
+        "tabs": [
+          {
+            "tabId": "slide1",
+            "index": 0,
+            "title": "Slide 1",
+            "title_key": "",
+            "icon": {
+              "code": 59664,
+              "name": "circle",
+              "uid": "95daccc64b347c483446a8b070470756"
+            }
+          },
+          {
+            "tabId": "slide2",
+            "index": 1,
+            "title": "Slide 2",
+            "title_key": "",
+            "icon": {
+              "code": 59664,
+              "name": "circle",
+              "uid": "95daccc64b347c483446a8b070470756"
+            }
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    }
+  }
+}

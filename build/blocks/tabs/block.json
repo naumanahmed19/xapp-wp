@@ -1,0 +1,87 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "xapp/tabs",
+  "version": "0.1.0",
+  "title": "Tabs",
+  "category": "design",
+  "icon": "layout",
+  "description": "An app bar for each main screen",
+  "supports": {
+    "html": false,
+    "alignWide": false,
+    "align": [
+      "center",
+      "full",
+      "left",
+      "right",
+      "wide"
+    ]
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "selector": "div",
+      "default": {
+        "tabs": [
+          {
+            "tabId": "t1",
+            "index": 0,
+            "title": "Tab 1",
+            "icon": {
+              "uid": "505270887816b909af59d3d28b38f470",
+              "code": 60122,
+              "css": "home-solid"
+            }
+          },
+          {
+            "tabId": "t2",
+            "index": 1,
+            "title": "Tab 2",
+            "icon": {
+              "uid": "62daeadcfbab1a93631405c16133d48d",
+              "code": 60548,
+              "css": "search-solid"
+            }
+          },
+          {
+            "tabId": "t3",
+            "index": 2,
+            "title": "Tab 3",
+            "icon": {
+              "uid": "b964cb13964ea8fcef0754bcc1c6fbad",
+              "code": 61220,
+              "css": "allergies-solid"
+            }
+          }
+        ],
+        "layout": "layout1",
+        "tabStyle": {},
+        "tabBarStyle": {},
+        "filterStyle": false,
+        "showIcons": false
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    }
+  }
+}
