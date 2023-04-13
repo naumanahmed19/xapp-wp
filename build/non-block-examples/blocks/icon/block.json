@@ -50,9 +50,9 @@
       "type": "object",
       "default": {
         "icon": {
-          "code": 60566,
-          "name": "shopping-bag-solid",
-          "uid": "880c707cc5176b65c945badc5b660dba"
+          "code": 61318,
+          "name": "grain",
+          "uid": "3cce69b099575abea7f212e3529b747b"
         }
       }
     },

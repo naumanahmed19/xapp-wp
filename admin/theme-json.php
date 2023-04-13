@@ -71,8 +71,8 @@ function xapp_theme_json_theme( $theme_json ){
 		),
         'settings' => array(
 			"layout"=> array(
-				"contentSize" => "530px",
-				"wideSize" => "530px",
+				"contentSize" => "470px",
+				"wideSize" => "470px",
 			),
             'spacing' => array(
                 'units'    => array('px'),
@@ -190,6 +190,11 @@ function xapp_theme_json_theme( $theme_json ){
 						//'units'    => array('px'),
 					),
 					'color'=> array('background' => false, 'link'=>false),
+					'styles' => array(
+						"color"=> array(
+							"text" => '#000000',
+						),
+					),
 				),
 				"core/paragraph"=> array(
 					"color"=> array(
