@@ -42,7 +42,7 @@ define('XAPP_BLOCKS' , [
     'xapp/icon-button',
     'xapp/rounded-button',
     'xapp/full-width',
-
+    'xapp/logo',
  ]);
 
 /**
@@ -66,11 +66,6 @@ function isXappEditor(){
 if (!empty($_GET['page']) &&  $_GET['page'] =='xapp-apps-page' || (!empty($_GET['post_type']) && $_GET['post_type'] ==XAPP_POST_TYPE)) {
 
     require_once XAPP_IMPORT_PATH . 'build/non-block-examples/dahsboard/index.php';
-
-
-
-    
-
 
 }
 
@@ -138,6 +133,7 @@ if (isXappEditor()) {
                 'text',
                 'icon',
                 'intro-slider',
+                'logo'
 			];
 			
 			foreach($blocks as $block){

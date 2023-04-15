@@ -162,3 +162,13 @@ register_block_pattern(
         'categories' => array( 'xapp-buttons' ),
     )
 );
+
+
+//change wordpress publish button to save
+// function change_publish_button( $translation, $text ) {
+// 	if ( 'post' == get_post_type() && 'Publish' == $text ) {
+// 		return 'Save';
+// 	}
+// 	return $translation;
+// }
+// add_filter( 'gettext', 'change_publish_button', 10, 2 );
