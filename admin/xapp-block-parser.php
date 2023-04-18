@@ -85,8 +85,11 @@ function get_xapp_blocks($screenId=''){
     if(!$post) return [];
 	
 	$autoSavedPost;
+
+	//check if preview is requested & preview is true
+	
 	 
-	if(!empty($_GET['preview']) && $_GET['preview']){
+	if(!empty($_GET['preview']) && $_GET['preview'] == 'true'){
        $autoSavedPost  =  wp_get_post_autosave($postId);	
 	}
 	if(!empty($autoSavedPost)){

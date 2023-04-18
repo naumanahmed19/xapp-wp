@@ -21,7 +21,7 @@
     "__experimentalSelector": ".wp-block-button__link",
     "__experimentalStyle": {
       "color": {
-        "text": "#fff",
+        "text": "#E0E0E0",
         "background": "#32373c"
       }
     }

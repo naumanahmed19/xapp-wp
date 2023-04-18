@@ -43,6 +43,7 @@ define('XAPP_BLOCKS' , [
     'xapp/rounded-button',
     'xapp/full-width',
     'xapp/logo',
+
  ]);
 
 /**
@@ -53,7 +54,7 @@ require_once XAPP_IMPORT_PATH . 'admin/routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-register-post-type.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-block-parser.php';
-require_once XAPP_IMPORT_PATH . 'admin/theme-json.php';
+// require_once XAPP_IMPORT_PATH . 'admin/theme-json.php';
 
 global $pagenow;
 global $post;
@@ -97,6 +98,10 @@ function xapp_enque_scripts(){
     } 
 }
 add_action( 'admin_enqueue_scripts', 'xapp_enque_scripts' );
+
+
+//Allow for all post types
+register_block_type( __DIR__ . "/build/blocks/container" );
 /**
  * 
  * Only load if xapp page
@@ -115,7 +120,6 @@ if (isXappEditor()) {
     // require_once XAPP_IMPORT_PATH . 'build/blocks/screens/index.php';
     // require_once XAPP_IMPORT_PATH . 'build/blocks/screen/index.php';
     // require_once XAPP_IMPORT_PATH . 'build/blocks/buttons/index.php';
-    // require_once XAPP_IMPORT_PATH . 'build/blocks/button/index.php';
 
 
     	function xapp_blocks_init() {
@@ -128,12 +132,12 @@ if (isXappEditor()) {
                 'tab',
                 'button',
                 'inkwell',
-                'container',
                 'divider',
                 'text',
                 'icon',
                 'intro-slider',
-                'logo'
+                'logo',
+        
 			];
 			
 			foreach($blocks as $block){
@@ -146,6 +150,7 @@ if (isXappEditor()) {
 
 
 }
+
 
 
 

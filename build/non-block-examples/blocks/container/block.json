@@ -68,7 +68,8 @@
       "type": "object",
       "default": {
         "height": "",
-        "heightFull": false
+        "heightFull": false,
+        "auth": false
       }
     },
     "style": {

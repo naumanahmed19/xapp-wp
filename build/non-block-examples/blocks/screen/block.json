@@ -37,7 +37,6 @@
       ],
       "enum": [
         "all",
-        "insert",
         false
       ]
     },

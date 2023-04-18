@@ -33,6 +33,7 @@ function xapp_editor() {
 
 
 
+
 add_filter('admin_body_class', function ($classes) { 
 	//get current page
 	global $pagenow;
@@ -59,3 +60,44 @@ add_filter('admin_body_class', function ($classes) {
 	}
 return $classes;
 }); 
+
+
+
+
+
+/**
+ * Update autosaves before updating a post.
+ *
+ * Creates a new autosave for the post being updated, and updates its content
+ * with the latest post content before saving it. This fixes the issue if a post
+ * is updated and preview is requested.
+ *
+ * @param int $post_id The ID of the post being updated.
+ * @return void
+ */
+function xapp_autosaves_before_update_post( $post_id ) {
+	
+	$post_type = get_post_type( $post_id );
+    if ( $post_type !== XAPP_POST_TYPE ) {
+        return; // only update autosaves for xapp posts
+    }
+
+    if ( wp_is_post_autosave( $post_id ) ) {
+        return; // don't update autosaves of autosaves
+    }
+
+    // create a new autosave
+    $autosave_id = wp_create_post_autosave( $post_id );
+
+    if ( $autosave_id ) {
+        // get the autosave post object
+        $autosave_post = get_post( $autosave_id );
+
+        // update the autosave post content with the latest post content
+        $autosave_post->post_content = $_POST['content']; // or however you get the latest content
+
+        // save the updated autosave post
+        wp_update_post( $autosave_post );
+    }
+}
+add_action( 'pre_post_update', 'xapp_autosaves_before_update_post', 10, 1 );

@@ -58,7 +58,7 @@
 		'publicly_queryable'    => true,
 		'show_in_rest'          => true,
 		'rest_base'             => 'brand',
-		'template_lock'			=>false,
+		'template_lock'			=> true,
 		'capability_type' => 'page',
 		'menu_icon' =>  'dashicons-smartphone',
 		// 'capabilities' => array(
