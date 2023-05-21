@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/icon",
+  "version": "0.1.0",
+  "title": "Icon",
+  "category": "brand",
+  "icon": "layout",
+  "description": "Add icon",
+  "supports": {
+    "anchor": true,
+    "color": {
+      "__experimentalSkipSerialization": true,
+      "__experimentalDefaultControls": {
+        "text": true
+      }
+    },
+    "reusable": true,
+    "__experimentalStyle": {
+      "color": {
+        "text": "var(--wp--theme--color--icon , #E0E0E0)"
+      }
+    }
+  },
+  "textdomain": "xapp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "size": {
+      "type": "number",
+      "default": 16
+    },
+    "settings": {
+      "type": "object",
+      "default": {
+        "icon": {
+          "code": 61318,
+          "name": "grain",
+          "uid": "3cce69b099575abea7f212e3529b747b"
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    },
+    "align": {
+      "type": "string",
+      "default": "left"
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "gradient": {
+      "type": "string"
+    }
+  }
+}
