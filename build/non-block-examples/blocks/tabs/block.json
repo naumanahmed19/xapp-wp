@@ -15,23 +15,19 @@
       "left",
       "right",
       "wide"
-    ]
+    ],
+    "color": {
+      "link": false,
+      "text": false,
+      "__experimentalDefaultControls": {
+        "background": true
+      }
+    }
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "styles": [
-    {
-      "name": "default",
-      "label": "Default",
-      "isDefault": true
-    },
-    {
-      "name": "other",
-      "label": "Other"
-    }
-  ],
   "attributes": {
     "blockId": {
       "type": "string"
@@ -74,10 +70,25 @@
         ],
         "layout": "layout1",
         "tabStyle": {},
-        "tabBarStyle": {},
+        "tabBarStyle": {
+          "backgroundColor": "#000000",
+          "indicatorColor": "#000000"
+        },
         "filterStyle": false,
         "showIcons": false
       }
+    },
+    "barBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "indicatorColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "inactiveLabelColor": {
+      "type": "string",
+      "default": "#000000"
     },
     "style": {
       "type": "object",

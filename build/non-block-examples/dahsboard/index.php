@@ -14,11 +14,7 @@
  *
  * @param string $hook The current admin page.
  */
-function load_custom_wp_admin_scripts( $hook ) {
-	// // Load only on ?page=xapp-apps-page.
-	// if ( 'toplevel_page_xapp-apps-page' !== $hook ) {
-	// 	return;
-	// }
+function xapp_wp_admin_scripts( $hook ) {
 
 	// Load the required WordPress packages.
 
@@ -32,30 +28,24 @@ function load_custom_wp_admin_scripts( $hook ) {
 
 	// Load our app.js.
 	wp_register_script(
-		'09-code-data-basics-esnext',
+		'xapp-getting-started',
 		plugins_url( 'index.js', __FILE__ ),
 		$asset_file['dependencies'],
 		$asset_file['version'],
 		true,
 	);
-	wp_enqueue_script( '09-code-data-basics-esnext' );
+	wp_enqueue_script( 'xapp-getting-started' );
 
 	// Load our style.css.
 	wp_register_style(
-		'09-code-data-basics-esnext',
+		'xapp-getting-started',
 		plugins_url( 'style.css', __FILE__ ),
 		null,
 		$asset_file['version'],
 	);
-	wp_enqueue_style( '09-code-data-basics-esnext' );
-
-
-
-
-
-	
+	wp_enqueue_style( 'xapp-getting-started' );
 
 	
 }
-add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'xapp_wp_admin_scripts' );
 

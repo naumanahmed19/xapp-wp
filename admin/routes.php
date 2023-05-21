@@ -14,14 +14,14 @@ class Xapp_Routes {
      * @since 1.0.0
      */
     public static function register_rest_route() {
-      register_rest_route('xapp/', 'home', array(
+      register_rest_route('xapp', 'home', array(
         'methods' => 'GET',
+        'permission_callback' => '__return_true',
         'callback' => array(__CLASS__, 'handle_rest_request'),
       ));
     }
-
-
-
+  
+  
     /**
      * Handles the xapps/home REST API endpoint request.
      *
@@ -32,10 +32,21 @@ class Xapp_Routes {
      */
     public static function handle_rest_request($request) {
      
-      $blocks = get_xapp_blocks();
+      
+      $blocks = get_xapp_blocks();  
 
+    
+   
+      $ctrl = new XppBlocksController(); 
+     //if(empty($_GET['WP_POST_ID'])) {
+        $blocks = $ctrl->get($blocks);
+    // }
+      
+
+  
       // Apply filters to the posts array
-      $data['data']  =  apply_filters('xapps_home', $blocks);
+      $data['data']  =  $blocks;
+      $data['templates']  = $ctrl->getTemplates();
       $data['settings'] = apply_filters('xapps_home_settings',[]);
   
   

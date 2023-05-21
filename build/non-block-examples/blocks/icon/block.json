@@ -9,38 +9,23 @@
   "description": "Add icon",
   "supports": {
     "anchor": true,
-    "align": false,
-    "alignWide": false,
     "color": {
       "__experimentalSkipSerialization": true,
       "__experimentalDefaultControls": {
         "text": true
       }
     },
-    "reusable": false,
-    "__experimentalSelector": ".wp-block-button__link",
+    "reusable": true,
     "__experimentalStyle": {
       "color": {
-        "text": "#E0E0E0",
-        "background": "#32373c"
+        "text": "var(--wp--theme--color--icon , #E0E0E0)"
       }
     }
   },
-  "textdomain": "mdc-tabs",
+  "textdomain": "xapp",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "styles": [
-    {
-      "name": "default",
-      "label": "Default",
-      "isDefault": true
-    },
-    {
-      "name": "other",
-      "label": "Other"
-    }
-  ],
   "attributes": {
     "size": {
       "type": "number",
@@ -62,7 +47,7 @@
     },
     "align": {
       "type": "string",
-      "default": "center"
+      "default": "left"
     },
     "backgroundColor": {
       "type": "string"

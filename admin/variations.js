@@ -49,7 +49,7 @@ wp.domReady(function () {
 	//     "attributes": {
 	//       "blockId": "df954db0bb47404395ba4b9fc7c79abd",
 	//       "settings": {
-	//         "heightFull": false
+	//         "isHeightFull": false
 	//       },
 	//       "backgroundColor": "#ffffff"
 	//     },
@@ -81,7 +81,7 @@ wp.domReady(function () {
 	//             "attributes": {
 	//               "blockId": "93e5893251db44428c1de56b6e1de3be",
 	//               "settings": {
-	//                 "heightFull": false
+	//                 "isHeightFull": false
 	//               }
 	//             },
 	//             "innerBlocks": [
@@ -170,30 +170,24 @@ wp.domReady(function () {
 			width: '100%',
 		},
 	});
-	var content = `<!-- wp:group {"style":{"spacing":{"padding":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"blockGap":"0"}},"backgroundColor":"#ffffff","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-    <div class="wp-block-group has-ffffff-background-color has-background" style="padding-top:8px;padding-right:8px;padding-bottom:8px;padding-left:8px"><!-- wp:xapp/container {"blockId":"93e5893251db44428c1de56b6e1de3be","settings":{"heightFull":false}} -->
-    <div class="wp-block-xapp-container"><!-- wp:xapp/text {"align":"left","blockId":"de138224ab7046988865e8f707c3226a","settings":{"text":"List Title1","type":"text","url":"","style":[],"textKey":"block_de138224ab7046988865e8f707c3226a_text"},"className":"has-16-font-size"} -->
-    <div class="wp-block-xapp-text alignleft has-16-font-size"></div>
-    <!-- /wp:xapp/text -->
+	// var content = `<!-- wp:group {"style":{"spacing":{"padding":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"blockGap":"0"}},"backgroundColor":"#ffffff","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+    // <div class="wp-block-group has-ffffff-background-color has-background" ><!-- wp:xapp/container {"blockId":"93e5893251db44428c1de56b6e1de3be","settings":{"isHeightFull":false}} -->
+    // <div class="wp-block-xapp-container"><!-- wp:xapp/text {"align":"left","blockId":"de138224ab7046988865e8f707c3226a","settings":{"text":"List Title1","type":"text","url":"","style":[],"textKey":"block_de138224ab7046988865e8f707c3226a_text"},"className":"has-16-font-size"} -->
+    // <div class="wp-block-xapp-text alignleft has-16-font-size"></div>
+    // <!-- /wp:xapp/text -->
     
-    <!-- wp:xapp/text {"align":"left","blockId":"de138224ab7046988865e8f707c3226a","settings":{"text":"List View subtitle here","type":"text","url":"","style":[],"textKey":"block_de138224ab7046988865e8f707c3226a_text"}} -->
-    <div class="wp-block-xapp-text alignleft"></div>
-    <!-- /wp:xapp/text --></div>
-    <!-- /wp:xapp/container -->
+    // <!-- wp:xapp/text {"align":"left","blockId":"de138224ab7046988865e8f707c3226a","settings":{"text":"List View subtitle here","type":"text","url":"","style":[],"textKey":"block_de138224ab7046988865e8f707c3226a_text"}} -->
+    // <div class="wp-block-xapp-text alignleft"></div>
+    // <!-- /wp:xapp/text --></div>
+    // <!-- /wp:xapp/container -->
     
-    <!-- wp:xapp/icon-button {"settings":{"label":"","action":""},"className":"aligncenter"} -->
-    <div class="wp-block-xapp-icon-button aligncenter"><!-- wp:xapp/icon {"settings":{"icon":{"code":61477,"name":"more_vert","uid":"50e3766928de027392d54955c492ba86"}}} -->
-    <div class="wp-block-xapp-icon"></div>
-    <!-- /wp:xapp/icon --></div>
-    <!-- /wp:xapp/icon-button --></div>
-    <!-- /wp:group -->`;
+    // <!-- wp:xapp/icon-button {"settings":{"label":"","action":""},"className":"aligncenter"} -->
+    // <div class="wp-block-xapp-icon-button aligncenter"><!-- wp:xapp/icon {"settings":{"icon":{"code":61477,"name":"more_vert","uid":"50e3766928de027392d54955c492ba86"}}} -->
+    // <div class="wp-block-xapp-icon"></div>
+    // <!-- /wp:xapp/icon --></div>
+    // <!-- /wp:xapp/icon-button --></div>
+    // <!-- /wp:group -->`;
 	//     wp.blocks.registerBlockVariation( 'xapp/container', JSON.parse(tile));
-	wp.blocks.registerBlockVariation('core/group', {
-		name: 'test1',
-		title: 'Test Group',
-		description: 'A test create using row columns',
-		isDefault: false,
-	});
 
 	wp.blocks.registerBlockVariation('xapp/container', {
 		name: 'tile-single-line',
@@ -203,7 +197,7 @@ wp.domReady(function () {
 		attributes: {
 			className: 'is-style-shadow-solid',
 			settings: {
-				heightFull: false,
+				isHeightFull: false,
 			},
 			backgroundColor: '#ffffff',
 		},
@@ -217,7 +211,7 @@ wp.domReady(function () {
 		attributes: {
 			className: 'is-style-shadow-solid',
 			settings: {
-				heightFull: false,
+				isHeightFull: false,
 			},
 			backgroundColor: '#ffffff',
 		},
@@ -227,29 +221,29 @@ wp.domReady(function () {
 	/**
 	 * A Group block variation with box shadow, border, and padding.
 	 */
-	wp.blocks.registerBlockVariation('core/group', {
-		name: 'group-shadow-solid',
-		title: 'Group - Shadow Solid',
-		description: 'A group with a solid shadow',
-		isDefault: false,
-		attributes: {
-			className: 'is-style-shadow-solid',
-			style: {
-				border: {
-					width: '1px',
-				},
-				spacing: {
-					padding: {
-						top: 'var:preset|spacing|x-small',
-						right: 'var:preset|spacing|x-small',
-						bottom: 'var:preset|spacing|x-small',
-						left: 'var:preset|spacing|x-small',
-					},
-				},
-			},
-			borderColor: 'contrast',
-		},
-	});
+	// wp.blocks.registerBlockVariation('core/group', {
+	// 	name: 'group-shadow-solid',
+	// 	title: 'Group - Shadow Solid',
+	// 	description: 'A group with a solid shadow',
+	// 	isDefault: false,
+	// 	attributes: {
+	// 		className: 'is-style-shadow-solid',
+	// 		style: {
+	// 			border: {
+	// 				width: '1px',
+	// 			},
+	// 			spacing: {
+	// 				padding: {
+	// 					top: 'var:preset|spacing|x-small',
+	// 					right: 'var:preset|spacing|x-small',
+	// 					bottom: 'var:preset|spacing|x-small',
+	// 					left: 'var:preset|spacing|x-small',
+	// 				},
+	// 			},
+	// 		},
+	// 		borderColor: 'contrast',
+	// 	},
+	// });
 
 	/**
 	 * Disable the stack variation in the Group block.

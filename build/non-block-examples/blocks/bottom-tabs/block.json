@@ -10,14 +10,7 @@
   "supports": {
     "html": false,
     "multiple": false,
-    "alignWide": false,
-    "align": [
-      "center",
-      "full",
-      "left",
-      "right",
-      "wide"
-    ]
+    "alignWide": false
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",

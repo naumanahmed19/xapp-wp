@@ -1,0 +1,1 @@
+window.wp.hooks.addFilter("blocks.registerBlockType","xapp/blocks/supports",(function(r,o){return"core/cover"==o&&(r.supports={...r.supports,align:!1,typography:!1,borderRadius:!0,__experimentalBorder:{width:!1,radius:!0}}),"core/group"===o&&(r.supports={...r.supports,spacing:{},dimensions:{},color:{text:!1,background:!1,gradients:!1},typography:{},__experimentalBorder:{}}),r}));

@@ -6,11 +6,19 @@
   "title": "Screen",
   "category": "design",
   "icon": "mobile",
-  "description": "Example static block scaffolded with Create Block tool.",
+  "description": "Screen can be used to display as a page, drawer, or a modal.",
   "supports": {
     "html": false,
     "lock": true,
-    "anchor": false
+    "anchor": true,
+    "color": {
+      "gradients": false,
+      "link": false,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": false
+      }
+    }
   },
   "parent": [
     "xapp/screens"
@@ -19,8 +27,15 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
+  "usesContext": [
+    "screens/settings"
+  ],
   "attributes": {
     "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "screenId": {
       "type": "string",
       "default": ""
     },
@@ -47,16 +62,15 @@
     "tabScreenIndex": {
       "type": "number"
     },
+    "index": {
+      "type": "number"
+    },
     "icon": {
       "type": "object",
       "default": {}
     },
     "title": {
       "type": "string"
-    },
-    "scroll": {
-      "type": "boolean",
-      "default": true
     }
   }
 }

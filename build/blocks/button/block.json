@@ -16,7 +16,8 @@
       "__experimentalSkipSerialization": true,
       "gradients": true,
       "__experimentalDefaultControls": {
-        "background": true
+        "background": true,
+        "text": false
       }
     },
     "reusable": true,
@@ -76,8 +77,6 @@
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
   "styles": [
     {
       "name": "fill",
@@ -91,6 +90,10 @@
     {
       "name": "text",
       "label": "Text"
+    },
+    {
+      "name": "icon",
+      "label": "Icon"
     }
   ],
   "attributes": {
@@ -116,7 +119,7 @@
         },
         "elevation": 0,
         "color": {
-          "background": "#000000"
+          "background": "var(--wp--theme--color--primary)"
         }
       }
     },
@@ -124,5 +127,7 @@
       "type": "string",
       "default": "center"
     }
-  }
+  },
+  "editorStyle": "wp-xapp-button-editor",
+  "style": "wp-xapp-button"
 }

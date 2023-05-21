@@ -1,16 +1,20 @@
 <?php
+
 /**
  * @package xapp
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-define('XAPP_BLOCKS' , [
+define('XAPP_BLOCKS', [
     //Allow core wordPress blocks
 
+    'core/post-terms',
+    'core/block',
     'core/cover',
     'core/group',
-    'core/spacer', //TODO: create dart widget
+    'core/spacer',
+    //TODO: create dart widget
     'core/query',
     'core/post-template',
     'core/post-date',
@@ -19,32 +23,33 @@ define('XAPP_BLOCKS' , [
     'core/post-content',
     'core/post-featured-image',
     'core/image',
-    'core/paragraph', //TODO: allow html 
-    'core/heading', 
+    'core/paragraph',
+    //TODO: allow html 
+    'core/heading',
     'core/columns',
     'core/column',
 
-	'xapp/screens',
+    'xapp/screens',
     'xapp/bottom-tabs',
     'xapp/tabs',
-
     'xapp/button',
     'xapp/inkwell',
-	'xapp/appbar',
+    'xapp/appbar',
     'xapp/divider',
     'xapp/container',
     'xapp/text-block',
     'xapp/icon',
     'xapp/intro-slider',
-    
     'xapp/icon-text-button',
     'xapp/text-button',
     'xapp/icon-button',
     'xapp/rounded-button',
     'xapp/full-width',
     'xapp/logo',
+    'xapp/post-searchbar',
 
- ]);
+
+]);
 
 /**
  * Admin 
@@ -54,54 +59,81 @@ require_once XAPP_IMPORT_PATH . 'admin/routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-register-post-type.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-routes.php';
 require_once XAPP_IMPORT_PATH . 'admin/xapp-block-parser.php';
-// require_once XAPP_IMPORT_PATH . 'admin/theme-json.php';
+require_once XAPP_IMPORT_PATH . 'admin/xapp-blocks-controller.php';
 
-global $pagenow;
-global $post;
+require_once XAPP_IMPORT_PATH . 'admin/google-login/google-login.php';
+require_once XAPP_IMPORT_PATH . 'admin/inc/AuthController.php';
 
-function isXappEditor(){
-    return ( isset($_GET['post']) && get_post_type($_GET['post'] ) == XAPP_POST_TYPE ) 
-    || (isset($_GET['post_type']) && $_GET['post_type'] == XAPP_POST_TYPE );
+
+
+
+
+global $pagenow, $typenow;
+
+function isXappEditor()
+{
+    return (isset($_GET['post']) && get_post_type($_GET['post']) == XAPP_POST_TYPE)
+        || (isset($_GET['post_type']) && $_GET['post_type'] == XAPP_POST_TYPE);
 }
 
-if (!empty($_GET['page']) &&  $_GET['page'] =='xapp-apps-page' || (!empty($_GET['post_type']) && $_GET['post_type'] ==XAPP_POST_TYPE)) {
 
-    require_once XAPP_IMPORT_PATH . 'build/non-block-examples/dahsboard/index.php';
+function is_edit_page($new_edit = null)
+{
 
-}
-
-
-function is_edit_page($new_edit = null){
     global $pagenow;
     //make sure we are on the backend
-    if (!is_admin()) return false;
+    if (!is_admin())
+        return false;
 
-    
-    if($new_edit == "edit")
-        return in_array( $pagenow, array( 'post.php',  ) );
-    elseif($new_edit == "new") //check for new post page
-        return in_array( $pagenow, array( 'post-new.php' ) );
+
+    if ($new_edit == "edit")
+        return in_array($pagenow, array('post.php',));
+    elseif ($new_edit == "new") //check for new post page
+        return in_array($pagenow, array('post-new.php'));
     else //check for either new or edit
-        return in_array( $pagenow, array( 'post.php', 'post-new.php' ) );
+        return in_array($pagenow, array('post.php', 'post-new.php'));
 }
 
-function xapp_enque_scripts(){
-    if (!empty( $_GET['page'])  && $_GET['page'] =='xapp-apps-page' || (is_edit_page() ) ) {
-        wp_enqueue_style('xapp-tailwind', XAPP_IMPORT_URL.  'build/index.css');
-    
+
+function xapp_enque_scripts()
+{
+
+    global $pagenow, $typenow;
+
+
+    // Check if we are on the edit screen for the xapp post type
+    if (in_array($pagenow, array('post.php', 'post-new.php')) && $typenow == 'xapp') {
+
+
+        require_once XAPP_IMPORT_PATH . 'build/non-block-examples/dahsboard/index.php';
+
+        wp_enqueue_style('xapp-tailwind', XAPP_IMPORT_URL . 'build/index.css');
+
         //Block variations
-        wp_enqueue_script( 
-            'xapp-enqueue-block-variations', 
-            XAPP_IMPORT_URL . 'admin/variations.js', 
-            array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ) 
+        wp_enqueue_script(
+            'xapp-enqueue-block-variations',
+            XAPP_IMPORT_URL . 'admin/variations.js',
+            array('wp-blocks', 'wp-dom-ready', 'wp-edit-post')
         );
-    } 
+    }
+
+    // Check if we are on the xapp apps page
+    if ($pagenow == 'edit.php' && isset($_GET['post_type']) && $_GET['post_type'] == 'xapp' && isset($_GET['page']) && $_GET['page'] == 'xapp-apps-page') {
+        wp_enqueue_style('xapp-tailwind', XAPP_IMPORT_URL . 'build/index.css');
+    }
 }
-add_action( 'admin_enqueue_scripts', 'xapp_enque_scripts' );
+add_action('admin_enqueue_scripts', 'xapp_enque_scripts');
+
+/**
+ * 
+ * Enqueue scripts
+ */
+add_action('init', function () {
+    register_block_type(__DIR__ . "/build/blocks/container");
+});
 
 
-//Allow for all post types
-register_block_type( __DIR__ . "/build/blocks/container" );
+
 /**
  * 
  * Only load if xapp page
@@ -110,85 +142,57 @@ if (isXappEditor()) {
 
     //non-blocks -should be at top
     require_once XAPP_IMPORT_PATH . 'build/non-block-examples/meta/index.php';
-
-
+    require_once XAPP_IMPORT_PATH . 'build/non-block-examples/dahsboard/index.php';
     require_once XAPP_IMPORT_PATH . 'admin/xapp-editor-settings.php';
+    require_once XAPP_IMPORT_PATH . 'admin/theme-json.php';
+    function xapp_blocks_init()
+    {
+        $blocks = [
+            'screen',
+            'screens',
+            'appbar',
+            'bottom-tabs',
+            'tabs',
+            'tab',
+            'button',
+            'inkwell',
+            'divider',
+            'text',
+            'icon',
+            'intro-slider',
+            'logo',
+            'post-searchbar'
 
-    //blocks
-    // require_once XAPP_IMPORT_PATH . 'build/blocks/mockup/index.php';
-    //blocks
-    // require_once XAPP_IMPORT_PATH . 'build/blocks/screens/index.php';
-    // require_once XAPP_IMPORT_PATH . 'build/blocks/screen/index.php';
-    // require_once XAPP_IMPORT_PATH . 'build/blocks/buttons/index.php';
+        ];
 
-
-    	function xapp_blocks_init() {
-			$blocks = [
-				'screen',
-				'screens',
-                'appbar',
-                'bottom-tabs',
-                'tabs',
-                'tab',
-                'button',
-                'inkwell',
-                'divider',
-                'text',
-                'icon',
-                'intro-slider',
-                'logo',
-        
-			];
-			
-			foreach($blocks as $block){
-				register_block_type( __DIR__ . "/build/blocks/{$block}" );
-			}
-		}
-		add_action( 'init', 'xapp_blocks_init' );
-
-    
-
-
+        foreach ($blocks as $block) {
+            register_block_type(__DIR__ . "/build/blocks/{$block}");
+        }
+    }
+    add_action('init', 'xapp_blocks_init');
 }
 
 
-
-
-
-
-/**
-		 * 
-		 * Allow only follwoing blocks
-		 * 
-		 */
-		function xapp_allowed_block_types_when_post_provided( $allowed_block_types, $editor_context ) {
-			global $blocks;
-
-
-                 //get xapp blocks
-            // $blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
-            // $xappBlocks = array();
-            // foreach($blocks as $key) {
-            //     if(strpos($key->name, 'xapp/') === 0){
-            //         $keys[] = $key->name;
-            //     }
-             
-            // }
-		
-			if ( ! empty( $editor_context->post )  && XAPP_POST_TYPE == get_post_type()) {
-
-                if(is_array($allowed_block_types))
-                   return  array_merge(XAPP_BLOCKS,  $allowed_block_types) ;
-
-                return XAPP_BLOCKS;
-			}
-			return $allowed_block_types;
-		}
-		 
-		add_filter( 'allowed_block_types_all', 'xapp_allowed_block_types_when_post_provided', 1000, 2 );
-
-
-
-        // add_action( 'xapp_blocks','xapp_allowed_block_types_when_post_provided',0,$blocks )
-
     
+require_once XAPP_IMPORT_PATH . 'admin/patterns.php';
+new Patterns();
+/**
+ * 
+ * Allow only follwoing blocks
+ * 
+ */
+function xapp_allowed_block_types_when_post_provided($allowed_block_types, $editor_context)
+{
+    global $blocks;
+
+    if (!empty($editor_context->post) && XAPP_POST_TYPE == get_post_type()) {
+
+        if (is_array($allowed_block_types))
+            return array_merge(XAPP_BLOCKS, $allowed_block_types);
+
+        return XAPP_BLOCKS;
+    }
+    return $allowed_block_types;
+}
+
+add_filter('allowed_block_types_all', 'xapp_allowed_block_types_when_post_provided', 1000, 2);

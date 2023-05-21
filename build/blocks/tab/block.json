@@ -6,10 +6,18 @@
   "title": "Tab",
   "category": "design",
   "icon": "layout",
-  "description": "Example static block scaffolded with Create Block tool.",
+  "description": "Tab content",
   "supports": {
     "html": false,
-    "lock": true
+    "lock": true,
+    "color": {
+      "gradients": false,
+      "link": false,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": false
+      }
+    }
   },
   "parent": [
     "xapp/tabs"

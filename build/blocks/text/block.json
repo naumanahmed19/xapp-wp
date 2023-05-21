@@ -6,20 +6,9 @@
   "title": "Text",
   "category": "text",
   "icon": "layout",
-  "description": "Prompt visitors to take action with a button-style link.",
+  "description": "A single text block without html tags",
   "keywords": [
-    "link"
-  ],
-  "styles": [
-    {
-      "name": "text",
-      "label": "Text",
-      "isDefault": true
-    },
-    {
-      "name": "variable",
-      "label": "Variable Text"
-    }
+    "text"
   ],
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
@@ -42,10 +31,7 @@
     },
     "content": {
       "type": "string",
-      "source": "html",
-      "selector": "p",
-      "default": "",
-      "__experimentalRole": "content"
+      "default": ""
     },
     "dropCap": {
       "type": "boolean",
@@ -63,6 +49,7 @@
     }
   },
   "supports": {
+    "reusable": true,
     "anchor": true,
     "className": false,
     "color": {
@@ -70,6 +57,11 @@
       "__experimentalDefaultControls": {
         "background": false,
         "text": true
+      }
+    },
+    "__experimentalStyle": {
+      "color": {
+        "text": "var(--wp--theme--color--text , #E0E0E0)"
       }
     },
     "typography": {

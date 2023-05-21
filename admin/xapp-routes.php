@@ -6,6 +6,7 @@
 
 require_once XAPP_IMPORT_PATH . 'admin/class-xapp-import.php';
 require_once XAPP_IMPORT_PATH . 'admin/tgm.php';
+require_once XAPP_IMPORT_PATH . 'admin/inc/AuthController.php';
 
 add_action('rest_api_init', function() {
 
@@ -118,11 +119,46 @@ add_action('rest_api_init', function() {
 			}
 	
 			}
-	
+
+
+			//theme
+			$theme = [];
+			// $theme['darkPrimary'] = '0xFF6A51CC';
+			// $theme['darkSecondary'] = '0xFF373a43';
+			// $theme['darkPrimaryBackground'] = '0xFF1E1F27';
+			// $theme['darkSeconderyBackground'] = '0xFF1E1F27';
+			// $theme['lightPrimary'] = '0xFF000000';
+			// $theme['surface'] = '0xff0C101B$
+
+			$appTheme = get_post_custom_values( 'appTheme', $postId);
+			if($appTheme){
+				$deTheme =  json_decode($appTheme[0],true);
+				foreach ($deTheme as $item) {
+				
+						$theme[$item['name']]  = $item['value'];
+					
+					
+				}	
+			};
+
+
+			//convert to php 
+
+			// $theme = [
+			// 	"scaffold_background_color" => '0xFFF7F8Fa',
+			// 	"app_bar_color" => '0xFFFFFFFF',
+			// 	"primary_color" => '0xFF0645B1',
+			// 	"text_color" => '0xFFFCDE02'
+			// ];
+			
+
+
+
 			return [
 				'languages' => $langs,
 				'translations' => $translations,
-				'envs' => $env
+				'envs' => $env,
+				'theme'=>$theme 
 			]; //send default
 		  },
 	]);
@@ -172,7 +208,43 @@ add_action('rest_api_init', function() {
 		  },
 	]);
 
+	/**
+	 * Handle Register User request.
+	 */
+	register_rest_route( 'wp/v2', 'users/register', array(
+		'methods' => 'POST',
+		'permission_callback' => '__return_true',
+		'callback' => function ( $request )  {
+			$ctrl = new AuthController();
+			return $ctrl->register($request );
+		  },
+	) );
+
+	register_rest_route( 'wp/v2', 'user/update', array(
+		'methods' => 'POST',
+    	'permission_callback' => '__return_true',
+		'callback' => function ( $request ) {
+			$ctrl = new AuthController();
+			return $ctrl->update($request);
+    },
+
+	) );
+	  /**
+   * 
+   * Brand Route to caclculate price on backend 
+   */    
+  
+   register_rest_route( 'wp/v2', 'users/avatar', array(
+	'methods' => 'POST',
+	'permission_callback' => '__return_true',
+	'callback' => function ( $request ) {
+		$ctrl = new AuthController();
+		return $ctrl->avatar($request);
+	}
+	) );
 
 
 	
+
 });
+	

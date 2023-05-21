@@ -49,6 +49,7 @@ class Patterns {
 			require_once XAPP_IMPORT_PATH . 'admin/patterns/tiles.php';
 
 
+			require_once XAPP_IMPORT_PATH . 'admin/patterns/onboarding.php';
 
 
 
@@ -65,6 +66,7 @@ class Patterns {
 			'aquila-columns' => __( 'Aquila Coloumsn', 'aquila-features' ),
 			'xapp-button' => __( 'Buttons', 'xapp' ),
 			'xapp-tiles' => __( 'Tiles', 'xapp' ),
+			'xapp-onboarding' => __( 'Onboarding', 'xapp' ),
 		];
 
 		if ( ! empty( $pattern_categories ) ) {

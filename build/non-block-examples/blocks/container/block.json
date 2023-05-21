@@ -43,7 +43,7 @@
         "width": true
       }
     },
-    "__experimentalLayout": true
+    "__experimentalLayout": false
   },
   "styles": [
     {
@@ -67,8 +67,9 @@
     "settings": {
       "type": "object",
       "default": {
+        "width": "",
         "height": "",
-        "heightFull": false,
+        "isHeightFull": false,
         "auth": false
       }
     },

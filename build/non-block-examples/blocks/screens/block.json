@@ -9,7 +9,8 @@
   "supports": {
     "html": false,
     "multiple": false,
-    "anchor": true
+    "anchor": true,
+    "lock": true
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
