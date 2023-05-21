@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: Xapp
- * Plugin URI: https://github.com/WordPress/gutenberg-examples
- * Description: A core xapp plugin to build mobile apps
+ * Plugin Name: Xapp WP - Mobile App Builder
+ * Plugin URI: https://github.com/WordPress/xapp-wp
+ * Description: Xapp WP is a mobile app builder for WordPress. It allows you to build mobile apps for iOS and Android, directly from your WordPress site.
  * Version: 1.0.0
  * Author: xvelopers
  *
