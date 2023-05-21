@@ -162,17 +162,6 @@ function xapp_post_rest_payload($data, $post, $context)
 add_filter('rest_prepare_post', 'xapp_post_rest_payload', 10, 3);
 
 
-
-//change wordpress publish button to save
-// function change_publish_button( $translation, $text ) {
-// 	if ( 'post' == get_post_type() && 'Publish' == $text ) {
-// 		return 'Save';
-// 	}
-// 	return $translation;
-// }
-// add_filter( 'gettext', 'change_publish_button', 10, 2 );
-// Remove unwanted SVG filter injection WP
-
 /**
  * Update xApp theme JSON with custom settings for the container block.
  * This function is used for post type 
@@ -247,5 +236,3 @@ function xapp_prepare_rest_post($data, $post, $request)
     return $data;
 }
 add_filter('rest_prepare_post', 'xapp_prepare_rest_post', 10, 3);
-
-
