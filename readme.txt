@@ -1,21 +1,32 @@
 
+=== XAPP WP - Gutenberg Mobile App Builder ===
+Contributors: naumanahmed19
+Tags: mobile app, woocommece mobile app, app maker, android app, ios app, gutenberg, gutenberg blocks, gutenberg block, block editor, blocks, flutter
+Requires at least: 6.0
+Tested up to: 6.0
+Stable tag: 1.0.0
+Requires PHP: 7.4.30
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Xapp WP - Mobile App Builder includes tabs, screens, button and various other core blocks to build amazing apps using Gutenberg editor.
+
 == Plugin Name ==
-Xapp Blocks App Builder
+Xapp WP - Mobile App Builder
 
 == Description ==
-Xapp Blocks App Builder is a robust WordPress plugin that utilizes the Gutenberg editor and core blocks to seamlessly build mobile applications. With its intuitive interface and extensive feature set, this plugin empowers users to create fully customized apps for both iOS and Android platforms. Xapp Blocks App Builder leverages the power of xapp-wp.com to build your apps.
+Xapp WP - Mobile App Builder is a robust WordPress plugin that utilizes the Gutenberg editor and core blocks to seamlessly build mobile applications. With its intuitive interface and extensive feature set, this plugin empowers users to create fully customized apps for both iOS and Android platforms. Xapp Blocks App Builder leverages the power of xapp-wp.com to build your apps.
 
 == Installation ==
 
 Upload the "xapp-wp" folder to the "/wp-content/plugins/" directory or install the plugin directly from the WordPress plugin repository.
 Activate the plugin through the 'Plugins' menu in WordPress.
-Once activated, you can access the Xapp Blocks App Builder from the WordPress admin panel under the 'Xapp Blocks' menu.
+Once activated, you can access the Xapp Blocks App Builder from the WordPress admin panel under the 'Apps' menu.
 == Features ==
 
 Utilizes the Gutenberg editor and core blocks for building mobile apps.
-Create fully customized app components, screens, layouts, menus, and forms.
+Create fully customized app components, screens, layouts, menus.
 Extensive library of pre-designed blocks and templates for rapid app development.
-Seamless integration with popular WordPress plugins and themes.
 Responsive design and optimization for a seamless user experience across devices.
 Real-time preview and testing functionality for evaluating and refining your app.
 Supports app creation for both iOS and Android platforms.
