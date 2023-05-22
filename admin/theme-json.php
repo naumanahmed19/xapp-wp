@@ -216,17 +216,17 @@ function xapp_theme_json_theme($theme_json)
 					),
 
 					array(
-						'slug'  =>  "theme-scaffold",
+						'slug'  =>  "var(--wp--theme--color--scaffold)",
 						'color' =>  "var(--wp--theme--color--scaffold)",
 						'name'  => __('Scaffold', 'xapp'),
 					),
 					array(
-						'slug'  =>  "theme-primary",
+						'slug'  =>  "var(--wp--theme--color--primary)",
 						'color' =>  "var(--wp--theme--color--primary)",
 						'name'  => __('Primary', 'xapp'),
 					),
 					array(
-						'slug'  =>  "theme-card",
+						'slug'  =>  "var(--wp--theme--color--card)",
 						'color' =>  "var(--wp--theme--color--card)",
 						'name'  => __('Card', 'xapp'),
 					)
