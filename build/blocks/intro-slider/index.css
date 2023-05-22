@@ -123,4 +123,4 @@
   font-feature-settings: "liga";
 }
 
-.intro-slider__content{height:802px;display:flex;flex-direction:column;justify-content:center}.slider-bottom-navigation{height:65px;background-color:rgba(0,0,0,0);width:100%;overflow:hidden;z-index:8;position:absolute;bottom:100px;margin:0 auto;width:300px;left:0;right:0}.slider-bottom-navigation .mdc-tab{width:30px}.slider-bottom-navigation__indicator{display:block;width:20px;height:20px;background:#000;border-radius:50%}.slider-bottom-navigation__indicator__active{width:40px;border-radius:18px}
+.intro-slider__content{height:810px;display:flex;flex-direction:column;justify-content:center}.slider-bottom-navigation{height:65px;background-color:rgba(0,0,0,0);width:100%;overflow:hidden;z-index:8;position:absolute;bottom:100px;margin:0 auto;width:300px;left:0;right:0}.slider-bottom-navigation .mdc-tab{width:30px}.slider-bottom-navigation__indicator{display:block;width:20px;height:20px;background:#000;border-radius:50%}.slider-bottom-navigation__indicator__active{width:40px;border-radius:18px}
