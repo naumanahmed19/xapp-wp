@@ -189,6 +189,23 @@ wp.domReady(function () {
     // <!-- /wp:group -->`;
 	//     wp.blocks.registerBlockVariation( 'xapp/container', JSON.parse(tile));
 
+
+	wp.blocks.registerBlockVariation('xapp/tile', {
+		name: 'signin-tile',
+		title: 'Signin Tile',
+		description: 'A signin tile',
+		isDefault: false,
+		attributes: {
+			className: 'is-style-shadow-solid',
+			settings: {
+				isHeightFull: false,
+			},
+			backgroundColor: '#ffffff',
+		},
+		innerBlocks: singInTileBlockTemplate(),
+	});
+
+
 	wp.blocks.registerBlockVariation('xapp/container', {
 		name: 'tile-single-line',
 		title: 'Tile (Single Line)',
@@ -346,6 +363,55 @@ wp.domReady(function () {
 					},
 				},
 			},
+		];
+	}
+
+
+
+	function singInTileBlockTemplate() {
+		var leadingIcon =  {
+			"code": 60817,
+			"name": "user",
+			"uid": "366a9309c9230b659d515d920a673b31"
+		  };
+		return [
+			[
+				'core/columns',
+				{
+					verticalAlignment: 'center',
+					style: {
+						spacing: {
+							padding: {
+								top: '8px',
+								right: '8px',
+								bottom: '8px',
+								left: '8px',
+							},
+							blockGap: '0',
+						},
+					},
+					backgroundColor: '#ffffff',
+					layout: {
+						type: 'flex',
+						flexWrap: 'nowrap',
+						justifyContent: 'space-between',
+					},
+				},
+				[
+					[
+						'core/column',
+						{ width: '10%', verticalAlignment: 'center' },
+						iconBlockTemplate(leadingIcon),
+					],
+
+					[
+						'core/column',
+						{ width: '90%', verticalAlignment: 'center' },
+						[textBlockTemplate('Sign In')],
+					],
+
+				],
+			],
 		];
 	}
 

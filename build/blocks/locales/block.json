@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/language-switcher",
+  "version": "0.1.0",
+  "title": "Language Switcher",
+  "category": "xapp",
+  "icon": "layout",
+  "description": "Display user favourites block",
+  "supports": {
+    "html": false,
+    "alignWide": false,
+    "align": [
+      "center",
+      "full",
+      "left",
+      "right",
+      "wide"
+    ]
+  },
+  "textdomain": "xapp-brand",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "settings": {
+      "type": "object",
+      "default": {
+        "label": "",
+        "action": "",
+        "icon": {
+          "code": 61220,
+          "name": "favorite_border",
+          "uid": "b964cb13964ea8fcef0754bcc1c6fbad"
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    }
+  }
+}

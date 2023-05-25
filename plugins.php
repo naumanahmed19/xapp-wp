@@ -47,8 +47,8 @@ define('XAPP_BLOCKS', [
     'xapp/full-width',
     'xapp/logo',
     'xapp/post-searchbar',
-
-
+    'xapp/tile',
+    'xapp/language-switcher',
 ]);
 
 /**
@@ -161,7 +161,8 @@ if (isXappEditor()) {
             'icon',
             'intro-slider',
             'logo',
-            'post-searchbar'
+            'post-searchbar',
+            'tile','language-switcher',
 
         ];
 

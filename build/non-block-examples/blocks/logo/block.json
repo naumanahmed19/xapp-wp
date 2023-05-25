@@ -17,18 +17,21 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "attributes": {
-    "settings": {
+    "logo": {
       "type": "object",
-      "default": {
-        "logo": {
-          "id": null,
-          "url": ""
-        },
-        "logoLight": {
-          "id": null,
-          "url": ""
-        }
-      }
+      "default": {}
+    },
+    "logoLight": {
+      "type": "object",
+      "default": {}
+    },
+    "height": {
+      "type": "number",
+      "default": 50
+    },
+    "width": {
+      "type": "number",
+      "default": 50
     },
     "style": {
       "type": "object",

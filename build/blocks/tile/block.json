@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/tile",
+  "version": "0.1.0",
+  "title": "Tile",
+  "category": "text",
+  "icon": "layout",
+  "description": "Prompt visitors to take action with a button-style link.",
+  "keywords": [
+    "link"
+  ],
+  "supports": {
+    "className": true,
+    "anchor": false,
+    "reusable": false,
+    "html": false,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": false
+      }
+    },
+    "spacing": {
+      "blockGap": true,
+      "padding": true,
+      "margin": true,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "__experimentalBorder": {
+      "radius": true,
+      "color": true,
+      "style": true,
+      "width": true,
+      "__experimentalDefaultControls": {
+        "radius": true,
+        "color": true,
+        "style": true,
+        "width": true
+      }
+    },
+    "__experimentalLayout": false
+  },
+  "styles": [
+    {
+      "name": "fill",
+      "label": "Fill",
+      "isDefault": true
+    },
+    {
+      "name": "outline",
+      "label": "Outline"
+    }
+  ],
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "default": {
+        "width": "",
+        "height": "",
+        "isHeightFull": false,
+        "auth": false
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    }
+  }
+}
