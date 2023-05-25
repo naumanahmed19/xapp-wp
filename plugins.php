@@ -28,6 +28,7 @@ define('XAPP_BLOCKS', [
     'core/heading',
     'core/columns',
     'core/column',
+    'core/avatar',
 
     'xapp/screens',
     'xapp/bottom-tabs',
