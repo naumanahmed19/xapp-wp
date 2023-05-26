@@ -73,6 +73,10 @@
         "auth": false
       }
     },
+    "auth": {
+      "type": "string",
+      "default": ""
+    },
     "style": {
       "type": "object",
       "default": {}
