@@ -104,10 +104,14 @@ function xapp_theme_json_theme($theme_json)
 				"color" => array(
 					"scaffold" => '#f7f8fa',
 					"primary" => '#000000',
+					"secondary" => '#000000',
 					'card'	=> '#FFFFFF',
 					"text" => '#000000',
 					"appbar"	=> '#FFFFFF',
+					"appbarIcon"	=> '#000000',
 					"icon"	=> '#000000',
+					"divider"	=> '#E0E0E0',
+					"bottomTabbar"	=> '#FFFFFF',
 				),
 			),	
 			"custom"=> array(
@@ -226,10 +230,16 @@ function xapp_theme_json_theme($theme_json)
 						'name'  => __('Primary', 'xapp'),
 					),
 					array(
+						'slug'  =>  "var(--wp--theme--color--secondary)",
+						'color' =>  "var(--wp--theme--color--secondary)",
+						'name'  => __('Secondary', 'xapp'),
+					),
+					array(
 						'slug'  =>  "var(--wp--theme--color--card)",
 						'color' =>  "var(--wp--theme--color--card)",
 						'name'  => __('Card', 'xapp'),
-					)
+					),
+				
 
 				),
 			),
