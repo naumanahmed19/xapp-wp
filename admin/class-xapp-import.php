@@ -374,9 +374,14 @@ class Xapp_Import_Admin
         
         if(empty($request['xappItemMainPluginSlug'])) return 'xappItemMainPluginSlug plugin slug required';
         $contentFile =  content_url('/plugins') .'/'. $request['xappItemMainPluginSlug'] .'/data/content.json' ;
+ 
 
-      //  $contentFile = $request['contentUrl'];
         $all_data = $this->get_json_data_from_file($contentFile);
+
+        if (empty($all_data)) {
+            return 'content.json file is empty';
+        }
+    
         $this->reset_transient();
 
 

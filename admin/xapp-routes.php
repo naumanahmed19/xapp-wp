@@ -16,11 +16,6 @@ add_action('rest_api_init', function() {
 		'methods' => 'POST',
 		'permission_callback' => '__return_true',
 		'callback' =>  function ( $request )  {
-			
-
-			// $importer = new WP_Import();
-			// return  $importer->dispatch();
-		//	require_once('wp-load.php'); 
 			$importer = new Xapp_Import_Admin();
 			return $importer->import_content_post_type_data(XAPP_POST_TYPE,$request);
 			
@@ -35,9 +30,6 @@ add_action('rest_api_init', function() {
 		'permission_callback' => '__return_true',
 		'callback' =>  function ( $request ) {
             $plugin = $request['plugin'];
-
-
-
 			$importer = new Xapp_Import_Admin();
 				return $importer->install_plugin( $plugin);
 		  },
@@ -51,7 +43,6 @@ add_action('rest_api_init', function() {
 		'callback' =>  function ( $request ) {
             $plugin = $request['plugin'];
 
-		
 			$tgm = new TGM_Plugin_Activation();
 				return $tgm->does_plugin_require_updater( $plugin, '0.0.1');
 		  },
