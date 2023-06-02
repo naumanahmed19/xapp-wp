@@ -39,7 +39,7 @@
     },
     "align": {
       "type": "string",
-      "default": "center"
+      "default": ""
     }
   }
 }
