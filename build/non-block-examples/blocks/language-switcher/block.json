@@ -4,7 +4,7 @@
   "name": "xapp/language-switcher",
   "version": "0.1.0",
   "title": "Language Switcher",
-  "category": "xapp",
+  "category": "brand",
   "icon": "layout",
   "description": "Display user favourites block",
   "supports": {
