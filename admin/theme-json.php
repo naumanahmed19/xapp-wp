@@ -58,7 +58,7 @@ function xapp_theme_json_theme($theme_json)
 				// ),
 				"xapp/icon" => array(
 					"color"=> array(
-						"text" => "var(--wp--theme--color--text)"
+						"text" => "var(--wp--theme--color--icon)"
 					),
 				),
 				"xapp/text-block" => array(
