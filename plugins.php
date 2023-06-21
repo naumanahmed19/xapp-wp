@@ -50,6 +50,7 @@ define('XAPP_BLOCKS', [
     'xapp/post-searchbar',
     'xapp/tile',
     'xapp/language-switcher',
+    'xapp/stack',
 ]);
 
 /**
@@ -164,6 +165,7 @@ if (isXappEditor()) {
             'logo',
             'post-searchbar',
             'tile','language-switcher',
+            'stack'
 
         ];
 
