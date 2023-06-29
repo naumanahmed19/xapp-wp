@@ -220,23 +220,23 @@ function xapp_theme_json_theme($theme_json)
 					),
 
 					array(
-						'slug'  =>  'theme-color-scaffold',
-						'color' =>  'var(--wp--theme--color--scaffold)',
+						'slug'  =>  "var(--wp--theme--color--scaffold)",
+						'color' =>  "var(--wp--theme--color--scaffold)",
 						'name'  => __('Scaffold', 'xapp'),
 					),
 					array(
-						'slug'  =>  'theme-color-primary',
-						'color' =>  'var(--wp--theme--color--primary)',
+						'slug'  =>  "var(--wp--theme--color--primary)",
+						'color' =>  "var(--wp--theme--color--primary)",
 						'name'  => __('Primary', 'xapp'),
 					),
 					array(
-						'slug'  =>  'theme-color-secondary',
-						'color' =>  'var(--wp--theme--color--secondary)',
+						'slug'  =>  "var(--wp--theme--color--secondary)",
+						'color' =>  "var(--wp--theme--color--secondary)",
 						'name'  => __('Secondary', 'xapp'),
 					),
 					array(
-						'slug'  =>  'theme-color-card',
-						'color' =>  'var(--wp--theme--color--card)',
+						'slug'  =>  "var(--wp--theme--color--card)",
+						'color' =>  "var(--wp--theme--color--card)",
 						'name'  => __('Card', 'xapp'),
 					),
 				
