@@ -90,6 +90,10 @@
       "type": "string",
       "default": "#000000"
     },
+    "activeLabelColor": {
+      "type": "string",
+      "default": "#000000"
+    },
     "style": {
       "type": "object",
       "default": {}
