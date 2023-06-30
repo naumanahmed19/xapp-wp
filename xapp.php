@@ -142,6 +142,8 @@ function xapp_mime_types_json($mimes)
 {
     $mimes['json'] = 'application/json';
     $mimes['svg'] = 'image/svg+xml';
+    $mimes['csv'] = 'text/csv';//for woo commerce import
+
     return $mimes;
 }
 
