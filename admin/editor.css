@@ -7,21 +7,10 @@
 	display: none;
 }
 
-/* .post-type-xapp
-	.editor-styles-wrapper
-	.edit-post-visual-editor__post-title-wrapper
-	> :where(:not(.alignleft):not(.alignright)),
-.editor-styles-wrapper
-	.block-editor-block-list__layout.is-root-container
-	> :where(:not(.alignleft):not(.alignright)) {
-	max-width: 530px;
-	margin-left: auto !important;
-	margin-right: auto !important;
-} */
 
-.wp-block-image.aligncenter {
+/* .wp-block-image.aligncenter {
 	display: block !important;
-}
+} */
 
 html :where(.wp-block) {
 	margin-top: 0;
