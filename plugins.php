@@ -24,6 +24,9 @@ define('XAPP_BLOCKS', [
     'core/post-featured-image',
     'core/image',
     'core/paragraph',
+
+    "woocommerce/product-query",
+    "woocommerce/product-query/product-template",
     //TODO: allow html 
     'core/heading',
     'core/columns',
