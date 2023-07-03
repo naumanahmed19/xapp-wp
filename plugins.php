@@ -27,6 +27,8 @@ define('XAPP_BLOCKS', [
 
     "woocommerce/product-query",
     "woocommerce/product-query/product-template",
+    "woocommerce/product-price",
+    "woocommerce/product-button", //experimental
     //TODO: allow html 
     'core/heading',
     'core/columns',
