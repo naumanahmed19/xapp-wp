@@ -11,6 +11,7 @@
     "link"
   ],
   "supports": {
+    "layout": true,
     "className": true,
     "anchor": false,
     "reusable": false,
