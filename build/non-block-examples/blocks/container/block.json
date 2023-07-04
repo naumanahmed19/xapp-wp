@@ -62,6 +62,9 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "attributes": {
+    "align": {
+      "type": "string"
+    },
     "blockId": {
       "type": "string"
     },
