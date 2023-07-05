@@ -164,10 +164,6 @@ class XppBlocksController
                                 $this->templatesKeys[] = $templateKey;
                                 
                         }
-
-
-
-
                             // $item['template'] = $_GET['screenId']  ;
                      }
                     }

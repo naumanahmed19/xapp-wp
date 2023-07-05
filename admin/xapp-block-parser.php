@@ -97,7 +97,6 @@ function get_xapp_blocks($screenId=''){
 		$screenId = $_GET['screenId'];
 	}
 
-
 	$args = array(
 	'include'        =>[$postId],
 	'post_type'   => XAPP_POST_TYPE,
@@ -138,63 +137,6 @@ function get_xapp_blocks($screenId=''){
 
 	return [] ;
 }
-// function get_xapp_blocks($screenId=''){
-// 	//Page or Post sepecific blocks
-
-// 	if(!empty($_GET['WP_POST_ID'])) {
-// 		return  getBlockByUrl();
-// 	}
-
-// 	if(empty($_GET['APP_POST_ID']) || empty($_GET['screenId'])) return [];
-
-// 	$postId = $_GET['APP_POST_ID'];
-
-// 	if(!$screenId){
-// 		$screenId = $_GET['screenId'];
-// 	}
-
-
-// 	$args = array(
-// 	'include'        =>[$postId],
-// 	'post_type'   => XAPP_POST_TYPE,
-// 	'post_status' => 'publish',
-// 	'numberposts' => 1,
-// 	);
-// 	$post = get_posts($args)[0];
-
-
-//     if(!$post) return [];
-	
-// 	$autoSavedPost='';
-
-// 	//check if preview is requested & preview is true
-// 	if(!empty($_GET['preview']) && $_GET['preview'] == 'true'){
-//        $autoSavedPost  =  wp_get_post_autosave($postId);	
-// 	}
-// 	if (!empty($autoSavedPost)) {
-// 		$post =  $autoSavedPost; 	
-// 	}
-
-// 	$blocks = xapp_parse_blocks($post, true);
-
-
-// 	if($blocks[0]['blockName'] == 'xapp/screens') return [];
-//     $screens = $blocks['innerBlocks'];
-// 	$found_key = xapp_findScreenIndex($screenId, $screens );
-
- 
-// 	//Using index get innerHTML
-// 	if($found_key == -1 ) return [];
-
-// 	if(array_key_exists('innerBlocks', $blocks)){
-// 		//make screen array for looping..
-// 		$screen = $blocks['innerBlocks'][$found_key];
-// 		return [$screen];
-// 	}
-
-// 	return [] ;
-// }
-
 
 //find index of screenId in $abc
 function xapp_findScreenIndex($screenId, $screens) {
