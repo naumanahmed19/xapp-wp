@@ -60,6 +60,18 @@
         "queryId": ""
       }
     },
+    "queryId": {
+      "type": "string",
+      "default": ""
+    },
+    "placeholder": {
+      "type": "string",
+      "default": ""
+    },
+    "resultsScreen": {
+      "type": "string",
+      "default": ""
+    },
     "style": {
       "type": "object",
       "default": {}
