@@ -41,6 +41,14 @@
         }
       }
     },
+    "icon": {
+      "type": "object",
+      "default": {
+        "code": 61318,
+        "name": "grain",
+        "uid": "3cce69b099575abea7f212e3529b747b"
+      }
+    },
     "style": {
       "type": "object",
       "default": {}
