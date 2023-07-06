@@ -53,22 +53,11 @@
     }
   ],
   "attributes": {
-    "settings": {
-      "type": "object",
-      "default": {
-        "filter": true,
-        "queryId": ""
-      }
-    },
     "queryId": {
       "type": "string",
       "default": ""
     },
     "placeholder": {
-      "type": "string",
-      "default": ""
-    },
-    "resultsScreen": {
       "type": "string",
       "default": ""
     },
@@ -79,10 +68,6 @@
     "align": {
       "type": "string",
       "default": "center"
-    },
-    "elevation": {
-      "type": "number",
-      "default": 0
     }
   }
 }
