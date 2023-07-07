@@ -20,6 +20,26 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "attributes": {
+    "action": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "linkTo": {
+      "type": "string",
+      "default": ""
+    },
+    "screenType": {
+      "type": "string",
+      "default": ""
+    },
+    "templatekey": {
+      "type": "string",
+      "default": ""
+    },
     "settings": {
       "type": "object",
       "default": {
