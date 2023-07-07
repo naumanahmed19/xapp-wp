@@ -57,6 +57,10 @@
       "type": "string",
       "default": ""
     },
+    "autofocus": {
+      "type": "boolean",
+      "default": false
+    },
     "placeholder": {
       "type": "string",
       "default": ""
