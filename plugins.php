@@ -159,7 +159,7 @@ if (isXappEditor()) {
         $blocks = [
             'screen',
             'screens',
-            'appbar',
+            'appbar','bottombar',
             'bottom-tabs',
             'tabs',
             'tab',
