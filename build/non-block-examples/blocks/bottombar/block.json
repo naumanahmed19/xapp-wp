@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/bottombar",
+  "version": "0.1.0",
+  "title": "Bottom Bar",
+  "category": "brand",
+  "icon": "layout",
+  "description": "An app bar for each main screen",
+  "supports": {
+    "html": false,
+    "alignWide": false,
+    "reusable": true,
+    "color": {
+      "gradients": false,
+      "link": false,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": false
+      }
+    }
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}

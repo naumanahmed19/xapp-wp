@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "xapp/badge",
+  "version": "0.1.0",
+  "title": "Badge",
+  "category": "text",
+  "icon": "layout",
+  "description": "Badge",
+  "keywords": [
+    "badge",
+    "counter"
+  ],
+  "supports": {
+    "className": true,
+    "anchor": false,
+    "reusable": false,
+    "html": false,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true,
+        "link": false
+      }
+    },
+    "spacing": {
+      "blockGap": true,
+      "padding": true,
+      "margin": true,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "__experimentalBorder": {
+      "radius": true,
+      "color": true,
+      "style": true,
+      "width": true,
+      "__experimentalDefaultControls": {
+        "radius": true,
+        "color": true,
+        "style": true,
+        "width": true
+      }
+    },
+    "__experimentalLayout": false
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "blockId": {
+      "type": "string"
+    },
+    "settings": {
+      "type": "object",
+      "default": {
+        "width": "",
+        "height": "",
+        "isHeightFull": false,
+        "position": {},
+        "auth": false
+      }
+    },
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    }
+  }
+}

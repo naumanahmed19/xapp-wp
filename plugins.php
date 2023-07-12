@@ -56,6 +56,8 @@ define('XAPP_BLOCKS', [
     'xapp/tile',
     'xapp/language-switcher',
     'xapp/stack',
+    'xapp/badge',
+    'xapp/bottombar',
 ]);
 
 /**
@@ -170,7 +172,8 @@ if (isXappEditor()) {
             'logo',
             'post-searchbar',
             'tile','language-switcher',
-            'stack'
+            'stack',
+            'badge'
 
         ];
 
