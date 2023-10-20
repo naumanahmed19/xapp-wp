@@ -1,4 +1,8 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
+
 /**
  * Plugin Name: Xapp templates importer
  * Plugin URI: https://github.com/WordPress/gutenberg-examples

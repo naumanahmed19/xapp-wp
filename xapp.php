@@ -16,8 +16,6 @@ define('XAPP_IMPORT_URL', plugins_url('/', __FILE__));
 define('XAPP_ASSETS_URL', plugins_url('/assets', __FILE__));
 define('XAPP_POST_TYPE', 'xapp');
 
-require_once untrailingslashit(plugin_dir_path(__FILE__)) . '/admin/inc/custom-functions.php';
-
 
 final class xapp
 {

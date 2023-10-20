@@ -36,7 +36,7 @@ class xapp_Routes
   public static function handle_rest_request($request)
   {
 
-    $blocks = get_xapp_blocks();
+    $blocks = xapp_get__blocks();
     $ctrl = new xapp_BlocksController();
     $blocks = $ctrl->get($blocks);
     

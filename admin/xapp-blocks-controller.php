@@ -17,7 +17,7 @@ class xapp_BlocksController
 
     public function getBLocksByPostId()
     {
-        $blocks = get_xapp_blocks();
+        $blocks = xapp_get__blocks();
         return $this->getInnerBlocks($blocks, null);
     }
 
@@ -42,7 +42,7 @@ class xapp_BlocksController
             //do not attempt to get main template
             if($key == 'main') return;
 
-            $templateBlocks = get_xapp_blocks($key);
+            $templateBlocks = xapp_get__blocks($key);
             //innerblock accepts array of blocks
             $newBlocks = $this->getInnerBlocks($templateBlocks, null);
             $this->templates[$key] =   $newBlocks[0];

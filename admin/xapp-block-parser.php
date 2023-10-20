@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 
 function xapp_find_block($blocks, $key, $value ){
 
@@ -46,7 +48,7 @@ function xapp_parse_blocks($post, $hasScreens = false){
  * 
  * Get blocks for an individual post or page
  */
-function getBlockByUrl(){
+function xapp_getBlockByUrl(){
 	// Get the post ID from the URL parameter.
 	$postId = isset($_GET['WP_POST_ID']) ? absint($_GET['WP_POST_ID']) : 0;
 
@@ -82,11 +84,11 @@ function getBlockByUrl(){
 
 
 
-function get_xapp_blocks($screenId=''){
+function xapp_get__blocks($screenId=''){
 	//Page or Post sepecific blocks
 
 	if(!empty($_GET['WP_POST_ID'])) {
-		return  getBlockByUrl();
+		return  xapp_getBlockByUrl();
 	}
 
 	if(empty($_GET['APP_POST_ID']) || empty($_GET['screenId'])) return [];
