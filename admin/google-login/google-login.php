@@ -3,30 +3,22 @@
     Plugin Name: Flutter Login
     */
 
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 
-  add_action('rest_api_init', function() {
-    register_rest_route('xapp/v1', '/auth-google', array(
+    add_action('rest_api_init', function() {
+        register_rest_route('xapp/v1', '/auth-google', array(
         'methods' => 'POST',
         'permission_callback' => '__return_true',
-        'callback' => 'flutter_login_google_signin',
-    ));
-});
+        'callback' => 'xapp_flutter_login_google_signin',
+        ));
+    });
 
 
-    function curl_get_responce_contents($url)
-    {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return $result;
-    }
-     function verifyToken($access_token){
+   
+     function xapp_verifyToken($access_token){
         $url = 'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='.$access_token;
-        $response_contacts  =  curl_get_responce_contents($url);
-        $response   =   (json_decode($response_contacts));
-
+        $response  =  wp_remote_get($url);
         if(isset($response->issued_to))
         {
             return  $response;
@@ -35,7 +27,7 @@
         return false;
         
     }
-    function flutter_login_google_signin(WP_REST_Request $request) {
+    function xapp_flutter_login_google_signin(WP_REST_Request $request) {
 
         if(!class_exists('JWTAuth\Auth'))
             return new WP_Error('plugin_error', 'JWT plugin not activated', array('status' => 401));
@@ -45,7 +37,7 @@
         $id_token = $request->get_param('id_token');
         $access_token = $request->get_param('access_token');
         // Validate the token using the Google API
-        $payload = verifyToken($access_token);
+        $payload = xapp_verifyToken($access_token);
         if (!$payload) {
             return new WP_Error('invalid_token', 'Invalid token', array('status' => 401));
         }
@@ -58,7 +50,7 @@
             $request['email'] = $email; 
             $request['password'] = wp_generate_password();
             $request['first_name'] = $request['display_name'] ;
-            $authCtrl = new AuthController();
+            $authCtrl = new xapp_AuthController();
        
          $user_id =  $authCtrl->register( $request->get_params());
            
@@ -77,7 +69,7 @@
         // Generate a JWT token
         $jwt_token =   $jwtAuth->generate_token($user);
 
-        $userController = new AuthController();
+        $userController = new xapp_AuthController();
             $payload = array(
             'success' => true,
             "statusCode"=> 200,

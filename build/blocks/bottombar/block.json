@@ -39,6 +39,10 @@
     "blockId": {
       "type": "string"
     },
+    "height": {
+      "type": "string",
+      "default": "56px"
+    },
     "style": {
       "type": "object",
       "default": {

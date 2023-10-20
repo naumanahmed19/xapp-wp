@@ -1,5 +1,9 @@
 <?php
-class XppBlocksController
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
+
+class xapp_BlocksController
 {
 
 

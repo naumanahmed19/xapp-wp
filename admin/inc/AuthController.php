@@ -1,6 +1,6 @@
 <?php
 
-class AuthController{
+class xapp_AuthController{
 
     public function __construct(){
     
@@ -207,21 +207,43 @@ class AuthController{
      *  change Avatar
      * 
      */
-    function avatar( $request ){
-        if ( ! function_exists( 'wp_handle_upload' ) ) {
-            require_once( ABSPATH . 'wp-admin/includes/file.php' );
+    function avatar($request) {
+        if (!function_exists('wp_handle_upload')) {
+            require_once(ABSPATH . 'wp-admin/includes/file.php');
         }
-
-    $user_id = $request['user'];
+    
+        // Sanitize and validate the user input
+        $user_id = absint($request['user']); // Make sure it's an integer
+        if ($user_id <= 0) {
+            return 'Invalid user ID.';
+        }
+    
+        // Check if the file is uploaded properly
+        if (empty($_FILES['avatar'])) {
+            return 'No file uploaded.';
+        }
+    
+        // Escaping the file data before using it in queries
         $uploadedfile = $_FILES['avatar'];
-        $movefile = wp_handle_upload( $uploadedfile, array('test_form' => FALSE) );
-        if ( $movefile && !isset( $movefile['error'] ) ) {
-        update_user_meta($user_id, 'avatar', $movefile['url']) 
-        or add_user_meta($user_id, 'avatar', $movefile['url']);
+        $uploadedfile['name'] = sanitize_file_name($uploadedfile['name']);
+        $uploadedfile['type'] = sanitize_mime_type($uploadedfile['type']);
+    
+        $movefile = wp_handle_upload($uploadedfile, array('test_form' => false));
+    
+        if ($movefile && !isset($movefile['error'])) {
+            $avatar_url = esc_url($movefile['url']); // Escape the URL before saving
+    
+            // Update or add user meta with the avatar URL
+            if (get_user_meta($user_id, 'avatar', true)) {
+                update_user_meta($user_id, 'avatar', $avatar_url);
+            } else {
+                add_user_meta($user_id, 'avatar', $avatar_url);
+            }
         } else {
-            return  $movefile['error'];
+            return 'Error uploading the image: ' . esc_html($movefile['error']); // Escape the error message before returning
         }
-    return 'image uploaded';
+    
+        return 'Image uploaded.';
     }
 
     

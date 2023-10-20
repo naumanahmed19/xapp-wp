@@ -5,7 +5,10 @@
  * @package aquila-features
  */
 
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 ?>
+
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->

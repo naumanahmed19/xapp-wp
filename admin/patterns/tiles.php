@@ -1,4 +1,8 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
+
 register_block_pattern(
     'xapp/tile-two-line',
     [
@@ -11,7 +15,7 @@ register_block_pattern(
         <div class="wp-block-xapp-inkwell"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"padding":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"blockGap":"0"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"},"blockId":"b584d687545da4a288f4ccb2964aa6dda"} -->
         <div class="wp-block-columns are-vertically-aligned-center" style="padding-top:8px;padding-right:8px;padding-bottom:8px;padding-left:8px"><!-- wp:column {"verticalAlignment":"center","width":"15%","blockId":"b985827f5c24c495fb524d1c457ec0800"} -->
         <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:15%"><!-- wp:image {"width":55,"height":55,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"100px"}},"blockId":"bede3cd0c928a4c7ea9d0357dfc91079e"} -->
-        <figure class="wp-block-image size-large is-resized has-custom-border"><img src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="" style="border-radius:100px" width="55" height="55"/></figure>
+        <figure class="wp-block-image size-large is-resized has-custom-border"><img src="'.xapp_get_image('avatar.png').'" alt="" style="border-radius:100px" width="55" height="55"/></figure>
         <!-- /wp:image --></div>
         <!-- /wp:column -->
         
@@ -48,7 +52,7 @@ register_block_pattern(
         <div class="wp-block-xapp-inkwell"><!-- wp:columns {"verticalAlignment":"top","style":{"spacing":{"padding":{"top":"8px","right":"8px","bottom":"8px","left":"8px"},"blockGap":"0"}},"backgroundColor":"#ffffff","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"},"blockId":"bb20ddb40cab142dead96d024cf117b30"} -->
         <div class="wp-block-columns are-vertically-aligned-top has-ffffff-background-color has-background" style="padding-top:8px;padding-right:8px;padding-bottom:8px;padding-left:8px"><!-- wp:column {"verticalAlignment":"top","width":"15%","blockId":"b1461b59ddc7f445884ec7316b77d2a01"} -->
         <div class="wp-block-column is-vertically-aligned-top" style="flex-basis:15%"><!-- wp:image {"width":50,"height":50,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"100px"}},"blockId":"b57aaa83eba8643528dccaa6b3b89ade9"} -->
-        <figure class="wp-block-image size-large is-resized has-custom-border"><img src="https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png" alt="" style="border-radius:100px" width="50" height="50"/></figure>
+        <figure class="wp-block-image size-large is-resized has-custom-border"><img src="'.xapp_get_image('avatar.png').'" alt="" style="border-radius:100px" width="50" height="50"/></figure>
         <!-- /wp:image --></div>
         <!-- /wp:column -->
         

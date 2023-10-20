@@ -1,11 +1,12 @@
 <?php
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 /**
  * Registers import routes for
  * the corresponding context.
  */
 
 require_once XAPP_IMPORT_PATH . 'admin/class-xapp-import.php';
-require_once XAPP_IMPORT_PATH . 'admin/tgm.php';
 require_once XAPP_IMPORT_PATH . 'admin/inc/AuthController.php';
 
 add_action('rest_api_init', function() {
@@ -16,7 +17,7 @@ add_action('rest_api_init', function() {
 		'methods' => 'POST',
 		'permission_callback' => '__return_true',
 		'callback' =>  function ( $request )  {
-			$importer = new Xapp_Import_Admin();
+			$importer = new xapp_Import_Admin();
 			return $importer->import_content_post_type_data(XAPP_POST_TYPE,$request);
 			
 		  },
@@ -30,23 +31,23 @@ add_action('rest_api_init', function() {
 		'permission_callback' => '__return_true',
 		'callback' =>  function ( $request ) {
             $plugin = $request['plugin'];
-			$importer = new Xapp_Import_Admin();
+			$importer = new xapp_Import_Admin();
 				return $importer->install_plugin( $plugin);
 		  },
 	]);
 
 
 
-	register_rest_route('xapp/v1', '/check-updates', [
-		'methods' => 'POST',
-		'permission_callback' => '__return_true',
-		'callback' =>  function ( $request ) {
-            $plugin = $request['plugin'];
+	// register_rest_route('xapp/v1', '/check-updates', [
+	// 	'methods' => 'POST',
+	// 	'permission_callback' => '__return_true',
+	// 	'callback' =>  function ( $request ) {
+    //         $plugin = $request['plugin'];
 
-			$tgm = new TGM_Plugin_Activation();
-				return $tgm->does_plugin_require_updater( $plugin, '0.0.1');
-		  },
-	]);
+	// 		$tgm = new TGM_Plugin_Activation();
+	// 			return $tgm->does_plugin_require_updater( $plugin, '0.0.1');
+	// 	  },
+	// ]);
 
 	register_rest_route('xapp/v1', '/translations', [
 		'methods' => 'GET',
@@ -206,7 +207,7 @@ add_action('rest_api_init', function() {
 		'methods' => 'POST',
 		'permission_callback' => '__return_true',
 		'callback' => function ( $request )  {
-			$ctrl = new AuthController();
+			$ctrl = new xapp_AuthController();
 			return $ctrl->register($request );
 		  },
 	) );
@@ -215,7 +216,7 @@ add_action('rest_api_init', function() {
 		'methods' => 'POST',
     	'permission_callback' => '__return_true',
 		'callback' => function ( $request ) {
-			$ctrl = new AuthController();
+			$ctrl = new xapp_AuthController();
 			return $ctrl->update($request);
     },
 
@@ -229,7 +230,7 @@ add_action('rest_api_init', function() {
 	'methods' => 'POST',
 	'permission_callback' => '__return_true',
 	'callback' => function ( $request ) {
-		$ctrl = new AuthController();
+		$ctrl = new xapp_AuthController();
 		return $ctrl->avatar($request);
 	}
 	) );

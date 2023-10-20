@@ -1,6 +1,7 @@
 <?php
 
-
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 
 
 function xapp_app_add_scripts(){

@@ -116,7 +116,7 @@ add_filter(
     'jwt_auth_valid_credential_response',
     function ($response, $user) {
 
-        $userController = new AuthController();
+        $userController = new xapp_AuthController();
         $payload = array(
             'success' => true,
             "statusCode" => 200,

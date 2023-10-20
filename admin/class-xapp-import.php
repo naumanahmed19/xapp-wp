@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
  * @subpackage Advanced_Import/admin
  * @author     Addons Press <addonspress.com>
  */
-class Xapp_Import_Admin
+class xapp_Import_Admin
 {
     /**
      * Initialize the class and set its properties.
@@ -34,7 +34,7 @@ class Xapp_Import_Admin
     }
 
     /**
-     * Main Xapp_Import_Admin Instance
+     * Main xapp_Import_Admin Instance
      * Initialize the class and set its properties.
      *
      * @since    1.0.0
@@ -47,7 +47,7 @@ class Xapp_Import_Admin
 
         // Only run these methods if they haven't been ran previously.
         if (null === $instance) {
-            $instance = new Xapp_Import_Admin();
+            $instance = new xapp_Import_Admin();
         }
 
         // Always return the instance.
@@ -204,7 +204,7 @@ class Xapp_Import_Admin
  *
  * @since    1.0.0
  */
-function Xapp_Import_Admin()
+function xapp_Import_Admin()
 {
-    return Xapp_Import_Admin::instance();
+    return xapp_Import_Admin::instance();
 }

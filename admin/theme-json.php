@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
+
 function xapp_theme_json_theme($theme_json)
 {
 

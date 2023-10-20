@@ -14,7 +14,7 @@
  *
  * @return string|void Template markup.
  */
-function aquila_features_get_template( string $template, array $variables = [], bool $echo = false ) {
+function xapp_features_get_template( string $template, array $variables = [], bool $echo = false ) {
 
 	$template_file = sprintf( '%1$s/templates/%2$s.php', XAPP_IMPORT_PATH . 'admin', $template );
     

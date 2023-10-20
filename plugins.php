@@ -4,7 +4,8 @@
  * @package xapp
  */
 
-defined('ABSPATH') || exit;
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 
 define('XAPP_BLOCKS', [
     //Allow core wordPress blocks
@@ -79,14 +80,14 @@ require_once XAPP_IMPORT_PATH . 'admin/inc/AuthController.php';
 
 global $pagenow, $typenow;
 
-function isXappEditor()
+function xapp_isEditor()
 {
     return (isset($_GET['post']) && get_post_type($_GET['post']) == XAPP_POST_TYPE)
         || (isset($_GET['post_type']) && $_GET['post_type'] == XAPP_POST_TYPE);
 }
 
 
-function is_edit_page($new_edit = null)
+function xapp_is_edit_page($new_edit = null)
 {
 
     global $pagenow;
@@ -147,7 +148,7 @@ add_action('init', function () {
  * 
  * Only load if xapp page
  */
-if (isXappEditor()) {
+if (xapp_isEditor()) {
 
     //non-blocks -should be at top
     require_once XAPP_IMPORT_PATH . 'build/non-block-examples/meta/index.php';
@@ -187,7 +188,7 @@ if (isXappEditor()) {
 
     
 require_once XAPP_IMPORT_PATH . 'admin/patterns.php';
-new Patterns();
+new xapp_Patterns();
 /**
  * 
  * Allow only follwoing blocks
@@ -208,3 +209,13 @@ function xapp_allowed_block_types_when_post_provided($allowed_block_types, $edit
 }
 
 add_filter('allowed_block_types_all', 'xapp_allowed_block_types_when_post_provided', 1000, 2);
+
+/**
+ * 
+ * Allow only follwoing blocks
+ * 
+ */
+
+ function xapp_get_image($name){
+    return XAPP_IMPORT_URL . 'admin/assets/images/' . $name;
+ }

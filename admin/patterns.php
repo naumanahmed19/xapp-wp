@@ -1,4 +1,7 @@
 <?php
+
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 /**
  * Patterns Class.
  *
@@ -10,7 +13,7 @@
 /**
  * Class Patterns.
  */
-class Patterns {
+class xapp_Patterns {
 
 	/**
 	 * Constructor.
@@ -41,18 +44,11 @@ class Patterns {
 	public function register_block_patterns() {
 		if ( function_exists( 'register_block_pattern' ) ) {
 
-			// // Get the two column pattern content.
-			// $two_columns_content = aquila_features_get_template( 'patterns/two-columns' );
-			
 			require_once XAPP_IMPORT_PATH . 'admin/patterns/button.php';
 
 			require_once XAPP_IMPORT_PATH . 'admin/patterns/tiles.php';
 
-
 			require_once XAPP_IMPORT_PATH . 'admin/patterns/onboarding.php';
-
-
-
 
 		}
 	}

@@ -1,4 +1,6 @@
 <?php
+ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly      
+ 
 register_block_pattern(
     'xapp/icon-text-button',
     [
