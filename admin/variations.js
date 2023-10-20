@@ -518,7 +518,7 @@ wp.domReady(function () {
 							[
 								'core/image',
 								{
-									url: 'https://cdn.iconscout.com/icon/free/png-512/avatar-370-456322.png',
+									url: xapp_get_image('avatar.png'),
 									alt: '',
 									caption: '',
 									width: 55,

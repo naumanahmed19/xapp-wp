@@ -42,18 +42,18 @@ add_filter('admin_body_class', function ($classes) {
 	//check if the current page is post.php and if the post parameteris set
 	if ( $pagenow ==='post.php' && isset($_GET['post']) ) {
 		//get the post type via the post id from the URL
-		$postType = get_post_type( $_GET['post']);
+		$postType = get_post_type(sanitize_text_field($_GET['post']));
 		//append the new class
 		$classes .= 'single-' . $postType;
+
 	} 
 	//next check if this is a new post
 	elseif ( $pagenow ==='post-new.php' )  {
 		//check if the post_type parameter is set
-		if(isset($_GET['post_type'])) {
-			//in this case you can get the post_type directly from the URL
-			$classes .= 'single-' . urldecode($_GET['post_type']);
+		if (isset($_GET['post_type'])) {
+			$post_type = sanitize_text_field($_GET['post_type']);
+			$classes .= 'single-' . urldecode($post_type);
 		} else {
-			//if post_type is not set, a 'post' is being created
 			$classes .= 'single-post';
 		}
 
@@ -95,7 +95,7 @@ function xapp_autosaves_before_update_post( $post_id ) {
         $autosave_post = get_post( $autosave_id );
 
         // update the autosave post content with the latest post content
-        $autosave_post->post_content = $_POST['content']; // or however you get the latest content
+		$autosave_post->post_content = isset($_POST['content']) ? wp_kses_post($_POST['content']) : ''; // or however you get the latest content
 
         // save the updated autosave post
         wp_update_post( $autosave_post );

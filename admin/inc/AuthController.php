@@ -233,7 +233,7 @@ class xapp_AuthController{
         if ($movefile && !isset($movefile['error'])) {
             $avatar_url = esc_url($movefile['url']); // Escape the URL before saving
     
-            // Update or add user meta with the avatar URL
+        // Update or add user meta with the avatar URL
             if (get_user_meta($user_id, 'avatar', true)) {
                 update_user_meta($user_id, 'avatar', $avatar_url);
             } else {

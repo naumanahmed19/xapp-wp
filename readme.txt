@@ -2,8 +2,9 @@
 === XAPP WP - Gutenberg Mobile App Builder ===
 Contributors: naumanahmed19
 Tags: mobile app, woocommece mobile app, app maker, android app, ios app, gutenberg, gutenberg blocks, gutenberg block, block editor, blocks, flutter
-Requires at least: 6.0.0
-Tested up to: 6.2.2
+Requires at least: 6.0
+Requires PHP: 7.4.30
+Tested up to: 6.3
 Stable tag: 1.0.0
 Requires PHP: 7.4.30
 License: GPLv2 or later

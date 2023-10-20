@@ -168,7 +168,6 @@ class xapp_BlocksController
                                 $this->templatesKeys[] = $templateKey;
                                 
                         }
-                            // $item['template'] = $_GET['screenId']  ;
                      }
                     }
                     break;

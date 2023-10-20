@@ -56,7 +56,7 @@ class xapp_Import_Admin
 
 
     /*
-	 callback function for wp_ajax_install_plugin
+	    callback function for wp_ajax_install_plugin
 	* Install plugin
 	* 
 	*/

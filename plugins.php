@@ -80,11 +80,13 @@ require_once XAPP_IMPORT_PATH . 'admin/inc/AuthController.php';
 
 global $pagenow, $typenow;
 
-function xapp_isEditor()
-{
-    return (isset($_GET['post']) && get_post_type($_GET['post']) == XAPP_POST_TYPE)
-        || (isset($_GET['post_type']) && $_GET['post_type'] == XAPP_POST_TYPE);
+function xapp_isEditor() {
+    $post_type = isset($_GET['post']) ? sanitize_text_field($_GET['post']) : '';
+    $post_type_param = isset($_GET['post_type']) ? sanitize_text_field($_GET['post_type']) : '';
+    
+    return (get_post_type($post_type) == XAPP_POST_TYPE) || ($post_type_param == XAPP_POST_TYPE);
 }
+
 
 
 function xapp_is_edit_page($new_edit = null)

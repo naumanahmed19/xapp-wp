@@ -48,8 +48,8 @@ function xapp_parse_blocks($post, $hasScreens = false){
  */
 function getBlockByUrl(){
 	// Get the post ID from the URL parameter.
-	$postId = $_GET['WP_POST_ID'];
-	
+	$postId = isset($_GET['WP_POST_ID']) ? absint($_GET['WP_POST_ID']) : 0;
+
 	// Get the post with that ID.
 	$post = get_post($postId);
 	
@@ -91,14 +91,15 @@ function get_xapp_blocks($screenId=''){
 
 	if(empty($_GET['APP_POST_ID']) || empty($_GET['screenId'])) return [];
 
-	$postId = $_GET['APP_POST_ID'];
+	$postId = sanitize_text_field($_GET['APP_POST_ID']);
 
 	if(!$screenId){
-		$screenId = $_GET['screenId'];
+		$screenId = sanitize_text_field($_GET['screenId']);
 	}
 
+
 	$args = array(
-	'include'        =>[$postId],
+	'include'        => [$postId],
 	'post_type'   => XAPP_POST_TYPE,
 	'post_status' => 'publish',
 	'numberposts' => 1,
