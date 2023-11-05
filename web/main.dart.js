@@ -5554,8 +5554,8 @@ s["~"+o]=l
 s["-"+o]=l
 s["+"+o]=l
 s["*"+o]=l}}},
-bUo(){var s,r,q,p,o,n,m=B.TM()
-m=A.I9(B.TJ,A.I9(B.TO,A.I9(B.tR,A.I9(B.tR,A.I9(B.TN,A.I9(B.TK,A.I9(B.TL(B.tS),m)))))))
+bUo(){var s,r,q,p,o,n,m=B.TL()
+m=A.I9(B.TJ,A.I9(B.TM,A.I9(B.tR,A.I9(B.tR,A.I9(B.TO,A.I9(B.TK,A.I9(B.TN(B.tS),m)))))))
 if(typeof dartNativeDispatchHooksTransformer!="undefined"){s=dartNativeDispatchHooksTransformer
 if(typeof s=="function")s=[s]
 if(Array.isArray(s))for(r=0;r<s.length;++r){q=s[r]
@@ -42810,7 +42810,7 @@ $1(a){var s=$.dZ
 s=(s==null?$.dZ=A.js(self.window.flutterConfiguration):s).b
 if(s==null)s=null
 else{s=s.canvasKitBaseUrl
-if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/767d8c75e898091b925519803830fc2721658d07/":s)+a},
+if(s==null)s=null}return(s==null?"https://www.gstatic.com/flutter-canvaskit/0545f8705df301877d787107bac1a6e9fc9ee1ad/":s)+a},
 $S:56}
 A.bg0.prototype={
 $1(a){this.a.remove()
@@ -147092,8 +147092,12 @@ B.TJ=function(hooks) {
   if (typeof dartExperimentalFixupGetTag != "function") return hooks;
   hooks.getTag = dartExperimentalFixupGetTag(hooks.getTag);
 }
+B.tR=function(hooks) { return hooks; }
+
 B.TK=function(hooks) {
-  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";
+  if (typeof navigator != "object") return hooks;
+  var userAgent = navigator.userAgent;
+  if (typeof userAgent != "string") return hooks;
   if (userAgent.indexOf("Firefox") == -1) return hooks;
   var getTag = hooks.getTag;
   var quickMap = {
@@ -147109,23 +147113,7 @@ B.TK=function(hooks) {
   }
   hooks.getTag = getTagFirefox;
 }
-B.tR=function(hooks) { return hooks; }
-
-B.TL=function(getTagFallback) {
-  return function(hooks) {
-    if (typeof navigator != "object") return hooks;
-    var ua = navigator.userAgent;
-    if (ua.indexOf("DumpRenderTree") >= 0) return hooks;
-    if (ua.indexOf("Chrome") >= 0) {
-      function confirm(p) {
-        return typeof window == "object" && window[p] && window[p].name == p;
-      }
-      if (confirm("Window") && confirm("HTMLElement")) return hooks;
-    }
-    hooks.getTag = getTagFallback;
-  };
-}
-B.TM=function() {
+B.TL=function() {
   var toStringFunction = Object.prototype.toString;
   function getTag(o) {
     var s = toStringFunction.call(o);
@@ -147139,7 +147127,7 @@ B.TM=function() {
     }
   }
   function getUnknownTagGenericBrowser(object, tag) {
-    if (self.HTMLElement && object instanceof HTMLElement) return "HTMLElement";
+    if (object instanceof HTMLElement) return "HTMLElement";
     return getUnknownTag(object, tag);
   }
   function prototypeForTag(tag) {
@@ -147150,15 +147138,54 @@ B.TM=function() {
     return constructor.prototype;
   }
   function discriminator(tag) { return null; }
-  var isBrowser = typeof navigator == "object";
+  var isBrowser = typeof HTMLElement == "function";
   return {
     getTag: getTag,
     getUnknownTag: isBrowser ? getUnknownTagGenericBrowser : getUnknownTag,
     prototypeForTag: prototypeForTag,
     discriminator: discriminator };
 }
-B.TN=function(hooks) {
-  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";
+B.TM=function(hooks) {
+  var getTag = hooks.getTag;
+  var prototypeForTag = hooks.prototypeForTag;
+  function getTagFixed(o) {
+    var tag = getTag(o);
+    if (tag == "Document") {
+      if (!!o.xmlVersion) return "!Document";
+      return "!HTMLDocument";
+    }
+    return tag;
+  }
+  function prototypeForTagFixed(tag) {
+    if (tag == "Document") return null;
+    return prototypeForTag(tag);
+  }
+  hooks.getTag = getTagFixed;
+  hooks.prototypeForTag = prototypeForTagFixed;
+}
+B.tS=function getTagFallback(o) {
+  var s = Object.prototype.toString.call(o);
+  return s.substring(8, s.length - 1);
+}
+B.TN=function(getTagFallback) {
+  return function(hooks) {
+    if (typeof navigator != "object") return hooks;
+    var userAgent = navigator.userAgent;
+    if (typeof userAgent != "string") return hooks;
+    if (userAgent.indexOf("DumpRenderTree") >= 0) return hooks;
+    if (userAgent.indexOf("Chrome") >= 0) {
+      function confirm(p) {
+        return typeof window == "object" && window[p] && window[p].name == p;
+      }
+      if (confirm("Window") && confirm("HTMLElement")) return hooks;
+    }
+    hooks.getTag = getTagFallback;
+  };
+}
+B.TO=function(hooks) {
+  if (typeof navigator != "object") return hooks;
+  var userAgent = navigator.userAgent;
+  if (typeof userAgent != "string") return hooks;
   if (userAgent.indexOf("Trident/") == -1) return hooks;
   var getTag = hooks.getTag;
   var quickMap = {
@@ -147185,28 +147212,6 @@ B.TN=function(hooks) {
   }
   hooks.getTag = getTagIE;
   hooks.prototypeForTag = prototypeForTagIE;
-}
-B.TO=function(hooks) {
-  var getTag = hooks.getTag;
-  var prototypeForTag = hooks.prototypeForTag;
-  function getTagFixed(o) {
-    var tag = getTag(o);
-    if (tag == "Document") {
-      if (!!o.xmlVersion) return "!Document";
-      return "!HTMLDocument";
-    }
-    return tag;
-  }
-  function prototypeForTagFixed(tag) {
-    if (tag == "Document") return null;
-    return prototypeForTag(tag);
-  }
-  hooks.getTag = getTagFixed;
-  hooks.prototypeForTag = prototypeForTagFixed;
-}
-B.tS=function getTagFallback(o) {
-  var s = Object.prototype.toString.call(o);
-  return s.substring(8, s.length - 1);
 }
 B.TQ=new A.aHb(1,"unrestricted")
 B.tT=new A.a4p(null)
