@@ -178,7 +178,7 @@ if (xapp_isEditor()) {
             'post-searchbar',
             'tile','language-switcher',
             'stack',
-            'badge'
+            'badge',
 
         ];
 

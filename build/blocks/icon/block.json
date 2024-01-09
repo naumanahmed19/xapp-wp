@@ -29,24 +29,21 @@
   "attributes": {
     "size": {
       "type": "number",
-      "default": 16
+      "default": 24
     },
-    "settings": {
-      "type": "object",
-      "default": {
-        "icon": {
-          "code": 61318,
-          "name": "grain",
-          "uid": "3cce69b099575abea7f212e3529b747b"
-        }
-      }
+    "type": {
+      "type": "string",
+      "default": "outlined"
+    },
+    "fill": {
+      "type": "boolean",
+      "default": false
     },
     "icon": {
       "type": "object",
       "default": {
-        "code": 61318,
-        "name": "grain",
-        "uid": "3cce69b099575abea7f212e3529b747b"
+        "code": "e24e",
+        "name": "insert_emoticon"
       }
     },
     "style": {
