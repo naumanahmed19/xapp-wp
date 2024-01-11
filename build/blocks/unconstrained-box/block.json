@@ -11,24 +11,14 @@
     "container, width, height"
   ],
   "supports": {
-    "layout": true,
+    "layout": false,
     "className": false,
     "anchor": false,
     "reusable": false,
     "html": false
   },
-  "styles": [
-    {
-      "name": "fill",
-      "label": "Fill",
-      "isDefault": true
-    },
-    {
-      "name": "outline",
-      "label": "Outline"
-    }
-  ],
-  "textdomain": "mdc-tabs",
+  "styles": [],
+  "textdomain": "xapp",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
