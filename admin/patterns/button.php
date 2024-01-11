@@ -33,9 +33,9 @@ register_block_pattern(
     ]
 );
 register_block_pattern(
-    'xapp/icon-button',
+    'xapp/icon-button-2',
     [
-        'title'       => __( 'Icon Button', 'xapp' ),
+        'title'       => __( 'Icon Button 2', 'xapp' ),
         'description' => __( 'Add a simple text button', 'xapp' ),
         'categories'  => [ 'xapp-button' ],
         'keywords'      => array( 'button', 'fab button', 'icon button','square button','circle','rounded' ),

@@ -32,7 +32,10 @@ wp.domReady(function () {
 		});
 		return innerBlocks;
 	}
-
+	function xapp_get_image($name){
+		return  `admin/assets/images/${ $name}`;
+	 }
+	
 	function extractProperties(block) {
 		let properties = {};
 		// Extract the JSON object of properties from the block

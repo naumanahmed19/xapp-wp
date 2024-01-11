@@ -62,6 +62,7 @@ define('XAPP_BLOCKS', [
     'xapp/badge',
     'xapp/bottombar',
     'xapp/unconstrained-box',
+   
 ]);
 
 /**
@@ -191,6 +192,7 @@ if (xapp_isEditor()) {
             'stack',
             'badge',
             'unconstrained-box',
+            'icon-button',
 
         ];
 

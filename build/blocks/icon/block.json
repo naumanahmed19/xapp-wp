@@ -42,8 +42,8 @@
     "icon": {
       "type": "object",
       "default": {
-        "code": "e24e",
-        "name": "insert_emoticon"
+        "code": "e146",
+        "name": "add_box"
       }
     },
     "style": {
