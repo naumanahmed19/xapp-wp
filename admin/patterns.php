@@ -31,8 +31,9 @@ class xapp_Patterns {
 		/**
 		 * Actions.
 		 */
-		add_action( 'init', [ $this, 'register_block_patterns' ] );
-		add_action( 'init', [ $this, 'register_block_pattern_categories' ] );
+		add_action( 'init', [ $this, 'unregister_block_patterns' ] , 20  );
+		add_action( 'init', [ $this, 'register_block_patterns' ], 25 );
+		add_action( 'init', [ $this, 'register_block_pattern_categories' ],30 );
 
 
 		
@@ -53,10 +54,32 @@ class xapp_Patterns {
 		}
 	}
 
+
+	public function unregister_block_patterns() {
+
+		     // Get all registered patterns
+			 $registered_patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+
+			 // Loop through all registered patterns
+			 foreach ( $registered_patterns as $pattern ) {
+				 unregister_block_pattern( $pattern['name'] );
+			 }
+	}
+	
+
+
+
+
 	/**
 	 * Register Block Pattern Categories.
 	 */
 	public function register_block_pattern_categories() {
+
+		$registered_cats = WP_Block_Pattern_Categories_Registry::get_instance()->get_all_registered();
+		foreach ($registered_cats as $cat ) {
+
+			unregister_block_pattern_category( $cat['name'] );
+		}
 
 		$pattern_categories = [
 			'aquila-columns' => __( 'Aquila Coloumsn', 'aquila-features' ),

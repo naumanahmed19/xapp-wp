@@ -99,6 +99,7 @@ function xapp_theme_json_theme($theme_json)
 					"styles" => array(
 						"align" => false,
 					),
+					
 				),
 			),
 		),
@@ -205,6 +206,7 @@ function xapp_theme_json_theme($theme_json)
 			'color' => array(
 				'text'       => true,
 				"defaultPalette" => false,
+				"defaultGradients" => false,
 				'palette'    => array( /* New palette */
 					array(
 						'slug'  => '#000000',
@@ -245,6 +247,34 @@ function xapp_theme_json_theme($theme_json)
 				
 
 				),
+				// "gradients" => array(
+				//     array(
+				// 		"slug" => "vivid-cyan-blue-to-vivid-purple",
+				// 		"gradient" => "linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)",
+				// 		"name" => "Vivid cyan blue to vivid purple"
+				// 	),
+				// 	array(
+				// 		"slug" => "light-green-cyan-to-vivid-green-cyan",
+				// 		"gradient" => "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+				// 		"name" => "Light green cyan to vivid green cyan"
+				// 	),
+				// 	array(
+				// 		"slug" => "warm-flame",
+				// 		"gradient" => "linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
+				// 		"name" => "Warm Flame"
+				// 	),
+				// 	array(
+				// 		"slug" => "night-fade",
+				// 		"gradient" => "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
+				// 		"name" => "Night Fade"
+				// 	),
+				// 	array(
+				// 		"slug" => "spring-warmth",
+				// 		"gradient" => "linear-gradient(to right, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%)",
+				// 		"name" => "Spring Warmth"
+				// 	)
+					// Add more gradients here as needed.
+			//	),
 			),
 
 			'blocks' => array(
@@ -262,6 +292,14 @@ function xapp_theme_json_theme($theme_json)
 						"color"  => false,
 						"width" => false,
 					),
+				),
+				'core/cover' => array(
+					'color' => array(
+						"duotone" =>  [],
+						"customDuotone"  => false,
+						"defaultDuotone"  => false,
+					),
+					'filters' => false,
 				),
 				'xapp/icon-button' => array(
 					'color' => array('text' => false, 'link' => false),

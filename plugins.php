@@ -79,6 +79,16 @@ require_once XAPP_IMPORT_PATH . 'admin/inc/AuthController.php';
 
 
 
+/**
+ * 
+ * Allow only follwoing blocks
+ * 
+ */
+
+ function xapp_get_image($name){
+    return XAPP_IMPORT_URL . 'admin/assets/images/' . $name;
+ }
+
 
 global $pagenow, $typenow;
 
@@ -213,13 +223,3 @@ function xapp_allowed_block_types_when_post_provided($allowed_block_types, $edit
 }
 
 add_filter('allowed_block_types_all', 'xapp_allowed_block_types_when_post_provided', 1000, 2);
-
-/**
- * 
- * Allow only follwoing blocks
- * 
- */
-
- function xapp_get_image($name){
-    return XAPP_IMPORT_URL . 'admin/assets/images/' . $name;
- }
