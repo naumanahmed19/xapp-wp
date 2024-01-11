@@ -61,6 +61,7 @@ define('XAPP_BLOCKS', [
     'xapp/stack',
     'xapp/badge',
     'xapp/bottombar',
+    'xapp/unconstrained-box',
 ]);
 
 /**
@@ -189,6 +190,7 @@ if (xapp_isEditor()) {
             'tile','language-switcher',
             'stack',
             'badge',
+            'unconstrained-box',
 
         ];
 

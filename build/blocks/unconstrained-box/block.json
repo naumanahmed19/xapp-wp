@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/unconstrained-box",
+  "version": "0.1.0",
+  "title": "Unconstrained Box ",
+  "category": "text",
+  "icon": "layout",
+  "description": "A widget that imposes no constraints on its child, allowing it to render at its natural size.",
+  "keywords": [
+    "container, width, height"
+  ],
+  "supports": {
+    "layout": true,
+    "className": false,
+    "anchor": false,
+    "reusable": false,
+    "html": false
+  },
+  "styles": [
+    {
+      "name": "fill",
+      "label": "Fill",
+      "isDefault": true
+    },
+    {
+      "name": "outline",
+      "label": "Outline"
+    }
+  ],
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "align": {
+      "type": "string"
+    },
+    "style": {
+      "type": "object",
+      "default": {}
+    }
+  }
+}
