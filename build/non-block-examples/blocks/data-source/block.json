@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/data-source",
+  "version": "0.1.0",
+  "title": "Data Source",
+  "category": "brand",
+  "keywords": [
+    "api,data,source,http"
+  ],
+  "icon": "link",
+  "description": "Get data from an external source",
+  "supports": {
+    "anchor": true,
+    "align": true,
+    "alignWide": false
+  },
+  "textdomain": "xapp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "usesContext": [
+    "xapp/data"
+  ],
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": "https://dummyjson.com/products?limit=4"
+    },
+    "key": {
+      "type": "string",
+      "default": "products"
+    },
+    "isCollection": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

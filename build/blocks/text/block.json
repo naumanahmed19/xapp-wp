@@ -79,5 +79,8 @@
     "__unstablePasteTextInline": true
   },
   "editorStyle": "wp-block-paragraph-editor",
-  "style": "wp-block-paragraph"
+  "style": "wp-block-paragraph",
+  "usesContext": [
+    "xapp/data"
+  ]
 }

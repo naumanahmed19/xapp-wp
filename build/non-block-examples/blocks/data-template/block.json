@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/data-template",
+  "version": "0.1.0",
+  "title": "Data Template",
+  "category": "text,data",
+  "icon": "layout",
+  "description": "A template for data",
+  "keywords": [
+    "text"
+  ],
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "align": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "reusable": true,
+    "anchor": true,
+    "className": false,
+    "color": {
+      "link": false,
+      "__experimentalDefaultControls": {
+        "background": false,
+        "text": true
+      }
+    },
+    "__experimentalStyle": {
+      "color": {
+        "text": "var(--wp--theme--color--text , #E0E0E0)"
+      }
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "__experimentalFontStyle": false,
+      "__experimentalFontWeight": false,
+      "__experimentalLetterSpacing": false,
+      "__experimentalTextTransform": false,
+      "__experimentalDefaultControls": {
+        "fontSize": true
+      }
+    },
+    "__experimentalSelector": "div",
+    "__unstablePasteTextInline": true
+  },
+  "editorStyle": "wp-block-paragraph-editor",
+  "style": "wp-block-paragraph",
+  "usesContext": [
+    "xapp/data",
+    "xapp/isLoading"
+  ]
+}

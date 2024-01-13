@@ -62,7 +62,10 @@ define('XAPP_BLOCKS', [
     'xapp/badge',
     'xapp/bottombar',
     'xapp/unconstrained-box',
-    'xapp/list-view'
+    'xapp/list-view',
+    'xapp/data-source',
+    'xapp/data-content',
+    'xapp/data-template',
 
    
 ]);
@@ -195,7 +198,10 @@ if (xapp_isEditor()) {
             'badge',
             'unconstrained-box',
             'icon-button',
-            'list-view'
+            'list-view',
+            'data-source',
+            'data-content',
+            'data-template',
 
         ];
 
