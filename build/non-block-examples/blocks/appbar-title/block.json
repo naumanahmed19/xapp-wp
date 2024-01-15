@@ -36,14 +36,6 @@
     }
   ],
   "attributes": {
-    "hasTitleBar": {
-      "type": "boolean",
-      "default": true
-    },
-    "pinned": {
-      "type": "boolean",
-      "default": true
-    },
     "centerTitle": {
       "type": "boolean",
       "default": false
@@ -51,18 +43,6 @@
     "hasLeadingIcon": {
       "type": "boolean",
       "default": true
-    },
-    "hasFlexibleSpace": {
-      "type": "boolean",
-      "default": true
-    },
-    "height": {
-      "type": "number",
-      "default": 0
-    },
-    "backgroundImage": {
-      "type": "object",
-      "default": {}
     },
     "title": {
       "type": "string",
