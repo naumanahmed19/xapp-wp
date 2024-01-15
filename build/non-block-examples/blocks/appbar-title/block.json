@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/appbar-title",
+  "version": "0.1.0",
+  "title": "Appbar Title",
+  "category": "brand",
+  "icon": "layout",
+  "description": "An app bar for each main screen",
+  "supports": {
+    "html": false,
+    "alignWide": false,
+    "reusable": true,
+    "color": {
+      "gradients": true,
+      "link": false,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true
+      }
+    }
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "hasTitleBar": {
+      "type": "boolean",
+      "default": true
+    },
+    "pinned": {
+      "type": "boolean",
+      "default": true
+    },
+    "centerTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasLeadingIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasFlexibleSpace": {
+      "type": "boolean",
+      "default": true
+    },
+    "height": {
+      "type": "number",
+      "default": 0
+    },
+    "backgroundImage": {
+      "type": "object",
+      "default": {}
+    },
+    "settings": {
+      "type": "object",
+      "default": {
+        "title": "Appbar Title",
+        "layout": "title",
+        "leadingIcon": {
+          "code": 61318,
+          "name": "grain",
+          "uid": "3cce69b099575abea7f212e3529b747b"
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}

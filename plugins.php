@@ -66,6 +66,7 @@ define('XAPP_BLOCKS', [
     'xapp/data-source',
     'xapp/data-content',
     'xapp/data-template',
+    'xapp/appbar-title',
 
    
 ]);
@@ -181,7 +182,7 @@ if (xapp_isEditor()) {
         $blocks = [
             'screen',
             'screens',
-            'appbar','bottombar',
+            'appbar','bottombar', 'appbar-title',
             'bottom-tabs',
             'tabs',
             'tab',
@@ -202,6 +203,7 @@ if (xapp_isEditor()) {
             'data-source',
             'data-content',
             'data-template',
+           
 
         ];
 
