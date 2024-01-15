@@ -64,16 +64,15 @@
       "type": "object",
       "default": {}
     },
-    "settings": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "leadingIcon": {
       "type": "object",
       "default": {
-        "title": "Appbar Title",
-        "layout": "title",
-        "leadingIcon": {
-          "code": 61318,
-          "name": "grain",
-          "uid": "3cce69b099575abea7f212e3529b747b"
-        }
+        "code": "e146",
+        "name": "add_box"
       }
     },
     "style": {
