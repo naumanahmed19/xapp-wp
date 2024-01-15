@@ -57,7 +57,7 @@ function xapp_post_type()
 		'publicly_queryable'    => true,
 		'show_in_rest'          => true,
 		'rest_base'             => 'xapp',
-		'template_lock'			=> true,
+		'template_lock'			=> 'insert',
 		'capability_type' => 'page',
 		'menu_icon' =>  'dashicons-smartphone',
 		// 'capabilities' => array(
@@ -209,14 +209,6 @@ add_action('rest_api_init', 'xapp_meta_fields', 0);
 
 function xapp_register_template()
 {
-
-
-	//  $json = '{"settings":{"screens":[{"screenId":"main","title":"Main","index":0}]}}';
-
-	$json = '{"settings":{"type":"object","default":{"action":"new","screens":[{"screenId":"main","title":"Main","index":0}]}}}';
-	$t =  json_decode($json, true);
-
-
 	$app = array(
 		array(
 			'xapp/screens', [
@@ -226,24 +218,6 @@ function xapp_register_template()
 				],
 			],
 		), //xapp/screeens
-
-		// array( 'xapp/screens', array(
-		// 			'lock' => [
-		// 		"remove" => true,
-		// 		"move" => true,
-		// 	]
-
-		// ), array(
-		// 	array( 'xapp/screen', array(
-		// 		'screenId'=> 'main',
-		// 		'title'=>'Main Screen',
-		// 		'index'=> 0,
-
-
-		// 	), ),
-
-		// ) ),
-
 	);
 
 

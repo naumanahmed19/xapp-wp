@@ -12,11 +12,11 @@
     "alignWide": false,
     "reusable": true,
     "color": {
-      "gradients": false,
+      "gradients": true,
       "link": false,
       "__experimentalDefaultControls": {
         "background": true,
-        "text": false
+        "text": true
       }
     }
   },
@@ -36,8 +36,33 @@
     }
   ],
   "attributes": {
-    "blockId": {
-      "type": "string"
+    "hasTitleBar": {
+      "type": "boolean",
+      "default": true
+    },
+    "pinned": {
+      "type": "boolean",
+      "default": true
+    },
+    "centerTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasLeadingIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "hasFlexibleSpace": {
+      "type": "boolean",
+      "default": true
+    },
+    "height": {
+      "type": "number",
+      "default": 0
+    },
+    "backgroundImage": {
+      "type": "object",
+      "default": {}
     },
     "settings": {
       "type": "object",
