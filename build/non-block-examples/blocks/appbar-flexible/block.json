@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/appbar-flexible",
+  "version": "0.1.0",
+  "title": "Appbar flexible area",
+  "category": "brand",
+  "icon": "aspectRatio",
+  "description": "An app bar for each main screen",
+  "parent": [
+    "xapp/appbar"
+  ],
+  "supports": {
+    "multiple": false,
+    "html": false,
+    "alignWide": false,
+    "reusable": true
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}

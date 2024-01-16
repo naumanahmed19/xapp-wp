@@ -5,9 +5,13 @@
   "version": "0.1.0",
   "title": "Appbar Title",
   "category": "brand",
-  "icon": "layout",
+  "icon": "button",
   "description": "An app bar for each main screen",
+  "parent": [
+    "xapp/appbar"
+  ],
   "supports": {
+    "multiple": false,
     "html": false,
     "alignWide": false,
     "reusable": true,

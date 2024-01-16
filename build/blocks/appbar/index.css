@@ -198,4 +198,4 @@
   font-feature-settings: "liga";
 }
 
-.brand-block__appbar .mdc-top-app-bar--dense{font-family:"Poppins",sans-serif !important}.brand-block__appbar .mdc-top-app-bar--dense .mdc-top-app-bar__section{padding:0 16px !important}
+.brand-block__appbar .mdc-top-app-bar--dense{font-family:"Poppins",sans-serif !important}.brand-block__appbar .mdc-top-app-bar--dense .mdc-top-app-bar__section{padding:0 16px !important}.flexible-space{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100%}

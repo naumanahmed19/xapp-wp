@@ -3,8 +3,8 @@
   "apiVersion": 2,
   "name": "xapp/appbar",
   "version": "0.1.0",
-  "title": "App Bar",
-  "category": "brand",
+  "title": "Appbar",
+  "category": "layout",
   "icon": "layout",
   "description": "An app bar for each main screen",
   "supports": {
