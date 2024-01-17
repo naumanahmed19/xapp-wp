@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/safe-area",
+  "version": "0.1.0",
+  "title": "Safe Area",
+  "category": "brand",
+  "icon": "aspectRatio",
+  "parent": [
+    "xapp/appbar"
+  ],
+  "description": "A wrapper add padding to the content to avoid the notch and the home indicator on android/iOS devices.",
+  "supports": {
+    "multiple": false,
+    "html": false,
+    "alignWide": false,
+    "reusable": true
+  },
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}

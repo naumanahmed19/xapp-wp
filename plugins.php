@@ -70,6 +70,7 @@ define('XAPP_BLOCKS', [
     'xapp/appbar-flexible',
     'xapp/center',
     'xapp/positioned',
+    'xapp/safe-area',
     
    
 ]);
@@ -207,7 +208,8 @@ if (xapp_isEditor()) {
             'data-content',
             'data-template',
             'center',
-            'positioned'
+            'positioned',
+            'safe-area',
            
 
         ];
