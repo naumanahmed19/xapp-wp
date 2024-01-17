@@ -68,6 +68,22 @@
     "blockId": {
       "type": "string"
     },
+    "height": {
+      "type": "string",
+      "default": ""
+    },
+    "width": {
+      "type": "string",
+      "default": ""
+    },
+    "isHeightFull": {
+      "type": "boolean",
+      "default": false
+    },
+    "auth": {
+      "type": "boolean",
+      "default": false
+    },
     "settings": {
       "type": "object",
       "default": {
@@ -76,10 +92,6 @@
         "isHeightFull": false,
         "auth": false
       }
-    },
-    "auth": {
-      "type": "string",
-      "default": ""
     },
     "style": {
       "type": "object",

@@ -68,6 +68,9 @@ define('XAPP_BLOCKS', [
     'xapp/data-template',
     'xapp/appbar-title',
     'xapp/appbar-flexible',
+    'xapp/center',
+    'xapp/positioned',
+    
    
 ]);
 
@@ -203,6 +206,8 @@ if (xapp_isEditor()) {
             'data-source',
             'data-content',
             'data-template',
+            'center',
+            'positioned'
            
 
         ];

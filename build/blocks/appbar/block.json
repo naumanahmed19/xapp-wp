@@ -36,23 +36,7 @@
     }
   ],
   "attributes": {
-    "hasTitleBar": {
-      "type": "boolean",
-      "default": true
-    },
     "pinned": {
-      "type": "boolean",
-      "default": true
-    },
-    "centerTitle": {
-      "type": "boolean",
-      "default": false
-    },
-    "hasLeadingIcon": {
-      "type": "boolean",
-      "default": true
-    },
-    "hasFlexibleSpace": {
       "type": "boolean",
       "default": true
     },
@@ -63,18 +47,6 @@
     "backgroundImage": {
       "type": "object",
       "default": {}
-    },
-    "settings": {
-      "type": "object",
-      "default": {
-        "title": "Appbar Title",
-        "layout": "title",
-        "leadingIcon": {
-          "code": 61318,
-          "name": "grain",
-          "uid": "3cce69b099575abea7f212e3529b747b"
-        }
-      }
     },
     "style": {
       "type": "object",
