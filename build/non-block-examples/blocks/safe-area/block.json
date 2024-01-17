@@ -7,7 +7,8 @@
   "category": "brand",
   "icon": "aspectRatio",
   "parent": [
-    "xapp/appbar"
+    "xapp/appbar",
+    "xapp/appbar-flexible"
   ],
   "description": "A wrapper add padding to the content to avoid the notch and the home indicator on android/iOS devices.",
   "supports": {
