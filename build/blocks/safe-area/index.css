@@ -1,4 +1,4 @@
-.xapp-safe-area-block{padding-top:24px}.xapp-safe-area-block ::before{content:"";display:block;width:100%;height:24px;background:#000;position:absolute;top:0;opacity:.1}
+.xapp-safe-area-block{padding-top:24px}.xapp-safe-area-block::before{content:"";display:block;width:100%;height:24px;background:#000;position:absolute;top:0;opacity:.1}
 @font-face {
   font-family: "Material Symbols Outlined";
   font-style: normal;
