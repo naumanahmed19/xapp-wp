@@ -11,7 +11,6 @@
     "xapp/appbar"
   ],
   "supports": {
-    "multiple": false,
     "html": false,
     "alignWide": false,
     "reusable": true
