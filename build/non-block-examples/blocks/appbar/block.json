@@ -18,6 +18,19 @@
         "background": true,
         "text": true
       }
+    },
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true,
+      "__experimentalDefaultControls": {
+        "backgroundImage": true
+      }
+    },
+    "dimensions": {
+      "minHeight": true
+    },
+    "position": {
+      "sticky": false
     }
   },
   "textdomain": "mdc-tabs",
