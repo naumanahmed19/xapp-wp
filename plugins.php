@@ -71,6 +71,7 @@ define('XAPP_BLOCKS', [
     'xapp/center',
     'xapp/positioned',
     'xapp/safe-area',
+    'xapp/card'
     
    
 ]);
@@ -210,6 +211,7 @@ if (xapp_isEditor()) {
             'center',
             'positioned',
             'safe-area',
+            'card'
            
 
         ];

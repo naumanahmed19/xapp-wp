@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/card",
+  "version": "0.1.0",
+  "title": "Card",
+  "category": "brand",
+  "icon": "aspectRatio",
+  "description": "A wrapper add padding to the content to avoid the notch and the home indicator on android/iOS devices.",
+  "supports": {
+    "html": false,
+    "alignWide": false,
+    "reusable": true,
+    "color": {
+      "__experimentalDefaultControls": {
+        "background": true
+      }
+    }
+  },
+  "textdomain": "xapp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "elevation": {
+      "type": "number",
+      "default": 1
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}
