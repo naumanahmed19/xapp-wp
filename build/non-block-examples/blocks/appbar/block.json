@@ -53,14 +53,6 @@
       "type": "boolean",
       "default": true
     },
-    "height": {
-      "type": "string",
-      "default": ""
-    },
-    "backgroundImage": {
-      "type": "object",
-      "default": {}
-    },
     "style": {
       "type": "object",
       "default": {
