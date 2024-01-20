@@ -198,4 +198,4 @@
   font-feature-settings: "liga";
 }
 
-.brand-block__appbar .mdc-top-app-bar--dense{font-family:"Poppins",sans-serif !important}.brand-block__appbar .mdc-top-app-bar--dense .mdc-top-app-bar__section{padding:0 16px !important}.xapp-appbar-block{overflow:hidden;position:relative;height:56px}.xapp-appbar-block .flexible-space{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100%}
+.brand-block__appbar .mdc-top-app-bar--dense{font-family:"Poppins",sans-serif !important}.brand-block__appbar .mdc-top-app-bar--dense .mdc-top-app-bar__section{padding:0 16px !important}.xapp-appbar-block{overflow:hidden;position:relative;height:56px}.xapp-appbar-block .pinned{top:0;left:0;right:0;position:sticky;z-index:999}.xapp-appbar-block .flexible-space{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100%}
