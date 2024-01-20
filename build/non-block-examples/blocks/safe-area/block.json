@@ -12,7 +12,6 @@
   ],
   "description": "A wrapper add padding to the content to avoid the notch and the home indicator on android/iOS devices.",
   "supports": {
-    "multiple": false,
     "html": false,
     "alignWide": false,
     "reusable": true
