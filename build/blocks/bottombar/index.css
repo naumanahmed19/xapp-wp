@@ -1,4 +1,4 @@
-.brand-block__appbar .mdc-top-app-bar--dense{font-family:"Poppins",sans-serif !important}.brand-block__appbar .mdc-top-app-bar--dense .mdc-top-app-bar__section{padding:0 16px !important}
+.xapp-bottombar-block{position:sticky;bottom:0}
 @font-face {
   font-family: "Material Symbols Outlined";
   font-style: normal;
