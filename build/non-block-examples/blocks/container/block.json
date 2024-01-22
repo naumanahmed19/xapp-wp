@@ -32,9 +32,6 @@
         "padding": true
       }
     },
-    "dimensions": {
-      "minHeight": true
-    },
     "__experimentalBorder": {
       "radius": true,
       "color": true,
