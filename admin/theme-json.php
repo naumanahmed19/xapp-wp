@@ -8,7 +8,7 @@ function xapp_theme_json_theme($theme_json)
 
 	$disabled = array(
 		'spacing' => array('units' => array('%', 'px'), 'padding' => false, 'blockGap' => false, 'margin' => false,),
-		'color' => array('text' => false, 'link' => false),
+		'color' => array('text' => false, 'link' => false,'background' => false ),
 		'typography' => array(
 			"customFontSize" => false,
 			"lineHeight" => false,
@@ -71,7 +71,8 @@ function xapp_theme_json_theme($theme_json)
 				),
 				"core/paragraph" => array(
 					"color"=> array(
-						"text" => "var(--wp--theme--color--text)"
+						"text" => "var(--wp--theme--color--text)",
+						"background" => false
 					),
 				),
 			
