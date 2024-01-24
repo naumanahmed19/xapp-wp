@@ -10,7 +10,15 @@
   "supports": {
     "html": false,
     "multiple": false,
-    "alignWide": false
+    "alignWide": false,
+    "color": {
+      "gradients": false,
+      "link": false,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": false
+      }
+    }
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
