@@ -31,52 +31,6 @@
     "blockId": {
       "type": "string"
     },
-    "app_currency": {
-      "type": "string",
-      "default": "USD"
-    },
-    "app_currency_symbol": {
-      "type": "string",
-      "default": "$"
-    },
-    "app_currency_pos": {
-      "type": "string",
-      "default": "left"
-    },
-    "app_filter_min_price": {
-      "type": "number",
-      "default": 0
-    },
-    "app_filter_max_price": {
-      "type": "number",
-      "default": 10000
-    },
-    "app_default_theme": {
-      "type": "string",
-      "default": "light"
-    },
-    "app_theme_switcher": {
-      "type": "boolean",
-      "default": true
-    },
-    "app_home_search": {
-      "type": "boolean",
-      "default": false
-    },
-    "content": {
-      "type": "string",
-      "source": "html",
-      "selector": "div",
-      "default": "some conntent...."
-    },
-    "mediaId": {
-      "type": "number",
-      "default": 0
-    },
-    "mediaUrl": {
-      "type": "string",
-      "default": ""
-    },
     "settings": {
       "type": "object",
       "default": {}
