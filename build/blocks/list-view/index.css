@@ -198,3 +198,4 @@
   font-feature-settings: "liga";
 }
 
+.is-style-horizontal{display:flex;overflow:auto !important}
