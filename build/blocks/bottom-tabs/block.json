@@ -79,56 +79,7 @@
     },
     "settings": {
       "type": "object",
-      "default": {
-        "showSelectedLabels": false,
-        "showUnselectedLabels": false,
-        "tabs": [
-          {
-            "tabId": "home",
-            "index": 0,
-            "title": "Home Page",
-            "title_key": "",
-            "icon": {
-              "uid": "505270887816b909af59d3d28b38f470",
-              "code": 60122,
-              "css": "home-solid"
-            }
-          },
-          {
-            "tabId": "search",
-            "index": 1,
-            "title": "Search",
-            "title_key": "",
-            "icon": {
-              "uid": "62daeadcfbab1a93631405c16133d48d",
-              "code": 60548,
-              "css": "search-solid"
-            }
-          },
-          {
-            "tabId": "favourites",
-            "index": 2,
-            "title": "Favourites",
-            "title_key": "",
-            "icon": {
-              "uid": "b964cb13964ea8fcef0754bcc1c6fbad",
-              "code": 61220,
-              "css": "allergies-solid"
-            }
-          },
-          {
-            "tabId": "account",
-            "index": 3,
-            "title": "Account",
-            "title_key": "",
-            "icon": {
-              "uid": "366a9309c9230b659d515d920a673b31",
-              "code": 60817,
-              "css": "user"
-            }
-          }
-        ]
-      }
+      "default": {}
     },
     "showSelectedLabels": {
       "type": "boolean",
