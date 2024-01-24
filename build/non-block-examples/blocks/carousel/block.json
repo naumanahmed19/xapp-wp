@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/carousel",
+  "version": "0.1.0",
+  "title": "Carousel",
+  "category": "text",
+  "icon": "layout",
+  "description": "Display multiple images in a rich interactive slideshow.",
+  "keywords": [
+    "link"
+  ],
+  "textdomain": "xapp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {},
+  "supports": {
+    "anchor": true,
+    "inserter": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true
+      }
+    },
+    "spacing": {
+      "blockGap": {
+        "__experimentalDefault": "2em"
+      },
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "__experimentalLayout": {
+      "allowSwitching": false,
+      "allowInheriting": false,
+      "allowEditing": false,
+      "default": {
+        "type": "flex",
+        "flexWrap": "nowrap"
+      }
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true,
+      "__experimentalDefaultControls": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+.is-style-horizontal{display:flex;overflow:auto !important}
 @font-face {
   font-family: "Material Symbols Outlined";
   font-style: normal;
@@ -198,4 +199,3 @@
   font-feature-settings: "liga";
 }
 
-.is-style-horizontal{display:flex;overflow:auto !important}

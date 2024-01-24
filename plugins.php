@@ -71,7 +71,8 @@ define('XAPP_BLOCKS', [
     'xapp/center',
     'xapp/positioned',
     'xapp/safe-area',
-    'xapp/card'
+    'xapp/card',
+    'xapp/carousel'
     
    
 ]);
@@ -211,7 +212,8 @@ if (xapp_isEditor()) {
             'center',
             'positioned',
             'safe-area',
-            'card'
+            'card',
+            'carousel'
 
         ];
 
