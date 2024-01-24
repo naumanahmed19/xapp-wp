@@ -212,7 +212,6 @@ if (xapp_isEditor()) {
             'positioned',
             'safe-area',
             'card'
-           
 
         ];
 
