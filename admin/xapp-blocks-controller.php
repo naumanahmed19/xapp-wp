@@ -140,7 +140,7 @@ class xapp_BlocksController
             $item = [];
             $name = $block['blockName'];
             if (!empty($args['screen'])) $item['screen'] = $args['screen'];
-            //  $item['settings'] = !empty($args['settings']) ? $args['settings']  : null;
+            //  $item = !empty($args) ? $args  : null;
             if (!empty($block['attrs']['title'])) $item['title'] = $block['attrs']['title'];
            
             $item['blockName'] = $block['blockName'];
@@ -157,11 +157,12 @@ class xapp_BlocksController
             switch ($name) {
                 case 'xapp/inkwell':
                 case 'xapp/button':
-                    if ($block['attrs']['settings']['linkTo'] == 'screen' 
-                    || $block['attrs']['settings']['linkTo'] == 'post-screen'
-                    || $block['attrs']['settings']['linkTo'] == 'tax-screen') {
+                case 'xapp/icon-button':
+                    if ($block['attrs']['linkTo'] == 'screen' 
+                    || $block['attrs']['linkTo'] == 'post-screen'
+                    || $block['attrs']['linkTo'] == 'tax-screen') {
                         //Do not run in loop if same screen is selected for naviation
-                        $templateKey =  $block['attrs']['settings']['templatekey'];  
+                        $templateKey =  $block['attrs']['templatekey'];  
                     if($templateKey && $_GET['screenId'] !=  $templateKey ){
                             //add key if not already exists
                         if(!in_array($templateKey,$this->templatesKeys)){
@@ -172,10 +173,11 @@ class xapp_BlocksController
                     }
                     break;
                 case 'core/embed':
-                    $item['attrs']['settings'] = $block['attrs'];
+                    $item['attrs'] = $block['attrs'];
                     $item['innerHTML'] = $block['innerHTML'];
                     break;
-        
+
+                    //TODO: override image block
                 case 'core/image':
                     preg_match('/src="([^"]+)"/', $block['innerHTML'], $match);
                     $item['attrs']['image'] = $match[1];
