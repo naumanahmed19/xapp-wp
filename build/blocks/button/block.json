@@ -97,14 +97,25 @@
     }
   ],
   "attributes": {
-    "settings": {
-      "type": "object",
-      "default": {
-        "label": "",
-        "action": "",
-        "linkTo": "",
-        "elevation": 0
-      }
+    "action": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "linkTo": {
+      "type": "string",
+      "default": ""
+    },
+    "screenType": {
+      "type": "string",
+      "default": ""
+    },
+    "templatekey": {
+      "type": "string",
+      "default": ""
     },
     "height": {
       "type": "number",
