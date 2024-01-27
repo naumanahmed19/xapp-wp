@@ -1,6 +1,6 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "xapp/button",
   "version": "0.1.0",
   "title": "Button",
@@ -8,72 +8,43 @@
   "icon": "button",
   "description": "Add a button block",
   "supports": {
-    "anchor": true,
-    "align": false,
-    "alignWide": false,
-    "inserter": true,
+    "className": true,
+    "anchor": false,
+    "reusable": false,
+    "html": false,
     "color": {
-      "__experimentalSkipSerialization": true,
       "gradients": true,
+      "link": true,
       "__experimentalDefaultControls": {
         "background": true,
         "text": false
       }
     },
-    "reusable": true,
     "spacing": {
-      "__experimentalSkipSerialization": true,
+      "blockGap": true,
       "padding": true,
-      "blockGap": false,
+      "margin": true,
       "__experimentalDefaultControls": {
-        "padding": true,
-        "blockGap": false
+        "padding": true
       }
+    },
+    "dimensions": {
+      "aspectRatio": true,
+      "minHeight": true
     },
     "__experimentalBorder": {
       "radius": true,
-      "border": true,
       "color": true,
-      "__experimentalSkipSerialization": true,
+      "style": true,
+      "width": true,
       "__experimentalDefaultControls": {
         "radius": true,
-        "border": true,
-        "color": true
+        "color": true,
+        "style": true,
+        "width": true
       }
     },
-    "__experimentalStyle": {
-      "border": {
-        "//": "100% causes an oval, but any explicit but really high value retains the pill shape.",
-        "radius": "9999px"
-      },
-      "color": {
-        "backgroundColor": "#32373c"
-      },
-      "typography": {
-        "fontSize": "",
-        "textDecoration": "none"
-      },
-      "spacing": {
-        "blockGap": false,
-        "padding": true,
-        "margin": true,
-        "__experimentalDefaultControls": {
-          "padding": true
-        },
-        "default": {
-          "blockGap": "0"
-        }
-      }
-    },
-    "__experimentalLayout": {
-      "allowSwitching": false,
-      "allowInheriting": false,
-      "allowJustification": false,
-      "allowVerticalAlignment": false,
-      "default": {
-        "type": "flex"
-      }
-    }
+    "__experimentalLayout": false
   },
   "textdomain": "mdc-tabs",
   "editorScript": "file:./index.js",
@@ -128,6 +99,10 @@
     "size": {
       "type": "string",
       "default": "custom"
+    },
+    "selfStretch": {
+      "type": "string",
+      "default": ""
     },
     "style": {
       "type": "object",
