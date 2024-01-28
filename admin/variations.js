@@ -238,6 +238,67 @@ wp.domReady(function () {
 		innerBlocks: inkWellBlockTemplate(tileTwoLinesBlockTemplate),
 	});
 
+
+	wp.blocks.registerBlockVariation('xapp/container', {
+		name: 'tile-two-lines-test',
+		title: 'Tile Test cart (Two Lines)',
+		description: 'A tile create using row columns',
+		isDefault: false,
+		attributes: {
+			className: 'is-style-shadow-solid',
+			settings: {
+				isHeightFull: false,
+			},
+			backgroundColor: '#ffffff',
+		},
+		innerBlocks: inkWellBlockTemplate(tileTwoLinesBlockTemplate),
+	});
+
+
+	// wp.blocks.registerBlockVariation('xapp/button', {
+	// 	name: 'product-add-to-cart-button',
+	// 	title: 'Add to Cart Button',
+	// 	description: 'A button that adds a product to the cart.',
+	// 	isDefault: false,
+	// 	attributes: {
+	// 		className: 'is-style-add-to-cart',
+	// 		metadata:{
+	// 			name: 'Add to Cart Button',
+	// 		}
+
+	// 	},
+	// 	innerBlocks:[
+	// 		[
+	// 			'xapp/icon',
+	// 			{
+	// 				icon:{
+	// 					"code": "f1cc",
+	// 					"name": "shopping_bag"
+	// 				},
+	// 				style: {
+	// 					color: {
+	// 						text: 'white',
+	// 					},
+	// 				},
+	// 			},
+	// 		],
+	// 		[
+	// 			'xapp/text-block',
+	// 			{
+	// 				content: 'Add to cart',
+	// 				style: {
+	// 					color: {
+	// 						text: 'white',
+	// 					},
+	// 				},
+	// 			},
+	// 		],
+	// 	],
+	// });
+
+
+
+
 	/**
 	 * A Group block variation with box shadow, border, and padding.
 	 */

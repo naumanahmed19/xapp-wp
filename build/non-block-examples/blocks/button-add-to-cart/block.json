@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "xapp/button-add-to-cart",
+  "version": "0.1.0",
+  "title": "Add to Cart Button",
+  "category": "brand",
+  "icon": "button",
+  "description": "Add a button block",
+  "textdomain": "mdc-tabs",
+  "editorScript": "file:./index.js",
+  "styles": [
+    {
+      "name": "fill",
+      "label": "Fill",
+      "isDefault": true
+    },
+    {
+      "name": "outline",
+      "label": "Outline"
+    },
+    {
+      "name": "text",
+      "label": "Text"
+    },
+    {
+      "name": "icon",
+      "label": "Icon"
+    }
+  ],
+  "attributes": {
+    "height": {
+      "type": "number",
+      "default": 50
+    },
+    "width": {
+      "type": "number",
+      "default": 150
+    },
+    "size": {
+      "type": "string",
+      "default": "custom"
+    },
+    "selfStretch": {
+      "type": "string",
+      "default": ""
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "spacing": {
+          "width": "150px",
+          "height": "50px"
+        },
+        "elevation": 0,
+        "color": {
+          "background": "var(--wp--theme--color--primary)"
+        }
+      }
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    }
+  },
+  "editorStyle": "wp-xapp-button-editor",
+  "style": "wp-xapp-button"
+}

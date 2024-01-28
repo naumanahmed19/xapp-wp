@@ -8,6 +8,7 @@
   "icon": "button",
   "description": "Add a button block",
   "supports": {
+    "renaming": true,
     "className": true,
     "anchor": false,
     "reusable": false,

@@ -74,6 +74,7 @@ define('XAPP_BLOCKS', [
     'xapp/safe-area',
     'xapp/card',
     'xapp/carousel',
+    'xapp/button-add-to-cart',
 
     
    
@@ -216,7 +217,8 @@ if (xapp_isEditor()) {
             'positioned',
             'safe-area',
             'card',
-            'carousel'
+            'carousel',
+            'button-add-to-cart',
 
         ];
 
