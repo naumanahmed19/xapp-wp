@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/grid-view",
+  "version": "0.1.0",
+  "title": "Grid View",
+  "category": "design",
+  "icon": "layout",
+  "description": "Grid View block for XAPP",
+  "keywords": [
+    "link"
+  ],
+  "styles": [
+    {
+      "name": "vertical",
+      "label": "Vertical",
+      "isDefault": true
+    },
+    {
+      "name": "horizontal",
+      "label": "Horizontal"
+    }
+  ],
+  "textdomain": "xapp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 2
+    },
+    "gap": {
+      "type": "number",
+      "default": 8
+    },
+    "alignItems": {
+      "type": "string",
+      "default": "start"
+    },
+    "justifyContent": {
+      "type": "string",
+      "default": "start"
+    }
+  },
+  "supports": {
+    "anchor": true,
+    "inserter": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true
+      }
+    },
+    "spacing": {
+      "blockGap": {
+        "__experimentalDefault": "2em"
+      },
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "padding": true,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "__experimentalLayout": {
+      "allowSwitching": false,
+      "allowInheriting": false,
+      "allowEditing": false,
+      "default": {
+        "type": "flex",
+        "flexWrap": "nowrap"
+      }
+    },
+    "__experimentalBorder": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true,
+      "__experimentalDefaultControls": {
+        "color": true,
+        "radius": true,
+        "style": true,
+        "width": true
+      }
+    }
+  }
+}

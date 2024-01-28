@@ -63,6 +63,7 @@ define('XAPP_BLOCKS', [
     'xapp/bottombar',
     'xapp/unconstrained-box',
     'xapp/list-view',
+    'xapp/grid-view',
     'xapp/data-source',
     'xapp/data-content',
     'xapp/data-template',
@@ -72,7 +73,8 @@ define('XAPP_BLOCKS', [
     'xapp/positioned',
     'xapp/safe-area',
     'xapp/card',
-    'xapp/carousel'
+    'xapp/carousel',
+
     
    
 ]);
@@ -206,6 +208,7 @@ if (xapp_isEditor()) {
             'unconstrained-box',
             'icon-button',
             'list-view',
+            'grid-view',
             'data-source',
             'data-content',
             'data-template',
