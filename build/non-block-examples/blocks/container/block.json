@@ -14,7 +14,7 @@
     "layout": true,
     "className": true,
     "anchor": false,
-    "reusable": false,
+    "reusable": true,
     "html": false,
     "color": {
       "gradients": true,
@@ -83,15 +83,6 @@
     "auth": {
       "type": "boolean",
       "default": false
-    },
-    "settings": {
-      "type": "object",
-      "default": {
-        "width": "",
-        "height": "",
-        "isHeightFull": false,
-        "auth": false
-      }
     },
     "style": {
       "type": "object",

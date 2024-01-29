@@ -57,7 +57,7 @@ function xapp_post_type()
 		'publicly_queryable'    => true,
 		'show_in_rest'          => true,
 		'rest_base'             => 'xapp',
-		'template_lock'			=> 'insert',
+		//'template_lock'			=> 'insert',
 		'capability_type' => 'page',
 		'menu_icon' =>  'dashicons-smartphone',
 		// 'capabilities' => array(
