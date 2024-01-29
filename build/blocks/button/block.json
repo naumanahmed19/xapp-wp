@@ -89,6 +89,10 @@
       "type": "string",
       "default": ""
     },
+    "queryId": {
+      "type": "string",
+      "default": ""
+    },
     "height": {
       "type": "number",
       "default": 50

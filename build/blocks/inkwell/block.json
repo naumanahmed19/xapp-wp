@@ -39,6 +39,10 @@
     "templatekey": {
       "type": "string",
       "default": ""
+    },
+    "queryId": {
+      "type": "string",
+      "default": ""
     }
   }
 }
