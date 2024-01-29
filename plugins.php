@@ -75,6 +75,7 @@ define('XAPP_BLOCKS', [
     'xapp/card',
     'xapp/carousel',
     'xapp/button-add-to-cart',
+    'xapp/button-add-to-favourite'
 
     
    
@@ -219,6 +220,7 @@ if (xapp_isEditor()) {
             'card',
             'carousel',
             'button-add-to-cart',
+            'button-add-to-favourite'
 
         ];
 

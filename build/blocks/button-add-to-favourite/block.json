@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "xapp/button-add-to-favourite",
+  "version": "0.1.0",
+  "title": "Add to favourite",
+  "category": "brand",
+  "icon": "layout",
+  "description": "Add to favourites Button",
+  "supports": {
+    "html": false,
+    "alignWide": false,
+    "align": [
+      "center",
+      "full",
+      "left",
+      "right",
+      "wide"
+    ],
+    "color": {
+      "background": true,
+      "text": true
+    }
+  },
+  "textdomain": "xapp-brand",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "styles": [
+    {
+      "name": "default",
+      "label": "Default",
+      "isDefault": true
+    },
+    {
+      "name": "other",
+      "label": "Other"
+    }
+  ],
+  "attributes": {
+    "width": {
+      "type": "number",
+      "default": 24
+    },
+    "style": {
+      "type": "string",
+      "default": "none"
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
+    }
+  }
+}
