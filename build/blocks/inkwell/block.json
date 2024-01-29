@@ -39,17 +39,6 @@
     "templatekey": {
       "type": "string",
       "default": ""
-    },
-    "settings": {
-      "type": "object",
-      "default": {
-        "title": "",
-        "label": "",
-        "action": "",
-        "linkTo": "",
-        "screenType": "",
-        "templatekey": ""
-      }
     }
   }
 }
