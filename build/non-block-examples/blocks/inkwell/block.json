@@ -36,13 +36,9 @@
       "type": "string",
       "default": ""
     },
-    "type": {
-      "type": "string",
-      "default": ""
-    },
-    "kind": {
-      "type": "string",
-      "default": ""
+    "link": {
+      "type": "object",
+      "default": {}
     },
     "templatekey": {
       "type": "string",
