@@ -36,6 +36,14 @@
       "type": "string",
       "default": ""
     },
+    "type": {
+      "type": "string",
+      "default": ""
+    },
+    "kind": {
+      "type": "string",
+      "default": ""
+    },
     "templatekey": {
       "type": "string",
       "default": ""
