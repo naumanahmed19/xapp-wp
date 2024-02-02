@@ -215,11 +215,6 @@ wp.domReady(function () {
 		description: 'A tile create using row columns',
 		isDefault: false,
 		attributes: {
-			className: 'is-style-shadow-solid',
-			settings: {
-				isHeightFull: false,
-			},
-			backgroundColor: '#ffffff',
 		},
 		innerBlocks: inkWellBlockTemplate(tileBlockTemplate),
 	});
@@ -415,9 +410,7 @@ wp.domReady(function () {
 		return [
 			'xapp/text-block',
 			{
-				settings: {
-					text: text,
-				},
+				// content: text,
 				style: {
 					color: {
 						text: '#000000',
@@ -434,27 +427,14 @@ wp.domReady(function () {
 
 	function singInTileBlockTemplate() {
 		var leadingIcon =  {
-			"code": 60817,
-			"name": "user",
-			"uid": "366a9309c9230b659d515d920a673b31"
+			"code": "e146",
+			"name": "add_box"
 		  };
 		return [
 			[
 				'core/columns',
 				{
 					verticalAlignment: 'center',
-					style: {
-						spacing: {
-							padding: {
-								top: '8px',
-								right: '8px',
-								bottom: '8px',
-								left: '8px',
-							},
-							blockGap: '0',
-						},
-					},
-					backgroundColor: '#ffffff',
 					layout: {
 						type: 'flex',
 						flexWrap: 'nowrap',
@@ -481,15 +461,13 @@ wp.domReady(function () {
 
 	function tileBlockTemplate() {
 		var leadingIcon = {
-			code: 61381,
-			name: 'landscape',
-			uid: 'd96e4c793ea532c251c05daccc24c0ee',
+			"code": "e146",
+			"name": "add_box"
 		};
 
 		var tralingIcon = {
-			code: 61477,
-			name: 'more_vert',
-			uid: '50e3766928de027392d54955c492ba86',
+			"code": "e146",
+			"name": "add_box"
 		};
 
 		return [
@@ -497,18 +475,7 @@ wp.domReady(function () {
 				'core/columns',
 				{
 					verticalAlignment: 'center',
-					style: {
-						spacing: {
-							padding: {
-								top: '8px',
-								right: '8px',
-								bottom: '8px',
-								left: '8px',
-							},
-							blockGap: '0',
-						},
-					},
-					backgroundColor: '#ffffff',
+				
 					layout: {
 						type: 'flex',
 						flexWrap: 'nowrap',
@@ -555,18 +522,7 @@ wp.domReady(function () {
 				'core/columns',
 				{
 					verticalAlignment: 'center',
-					style: {
-						spacing: {
-							padding: {
-								top: '8px',
-								right: '8px',
-								bottom: '8px',
-								left: '8px',
-							},
-							blockGap: '0',
-						},
-					},
-					backgroundColor: '#ffffff',
+			
 					layout: {
 						type: 'flex',
 						flexWrap: 'nowrap',
